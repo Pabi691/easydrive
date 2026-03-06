@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show Me, Tell Me Questions | DriveElite</title>
+    <title>Show Me, Tell Me Questions | Easy-Drive.UK</title>
     <meta name="description"
         content="Prepare for your practical driving test with our complete list of DVSA Show Me, Tell Me vehicle safety questions and answers.">
 
@@ -19,7 +19,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Custom Web Components -->
+    <script src="../assets/js/header.js" defer></script>
+    <script src="../assets/js/footer.js" defer></script>
     <style>
         body {
             background-color: #0f172a;
@@ -97,90 +101,7 @@
 <body>
 
     <!-- Top Navigation -->
-    <nav class="navbar-modern glass">
-        <div class="container nav-content-modern flex-row align-center justify-between">
-            <div class="logo-modern text-white">
-                <i class="fa-solid fa-file-contract text-primary text-2xl"></i>
-                <div class="logo-text">
-                    <span class="font-bold text-white text-xl">DRIVE</span><span
-                        class="text-primary text-xl">ELITE</span>
-                    <span class="logo-tagline text-xs block text-primary">YOUR FASTER ROUTE TO DRIVING</span>
-                </div>
-            </div>
-
-            <div class="contact-login flex-row align-center gap-medium">
-                <!-- Opening Hours -->
-                <div class="opening-hours text-white text-sm border-right pr-medium hidden-mobile">
-                    <span class="text-primary font-bold"><i class="fa-regular fa-clock mr-xs"></i>Mon-Fri:</span> 8am -
-                    8pm
-                </div>
-                <!-- whatsapp -->
-                <div class="whatsapp text-white text-sm border-right pr-medium hidden-mobile">
-                    <a href="https://wa.me/447777777777" class="text-white hover-text-primary transition-fast">
-                        <span class="text-primary font-bold"><i class="fa-brands fa-whatsapp mr-xs"></i></span>
-                        07777777777
-                    </a>
-
-                </div>
-
-                <!-- Google Rating -->
-                <div
-                    class="google-rating-nav flex-row align-center gap-xs text-white text-sm border-right pr-medium hidden-mobile">
-                    <i class="fa-brands fa-google text-lg"></i>
-                    <span class="font-bold">4.9/5</span>
-                    <div class="stars text-warning flex-row text-xs gap-xs">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-
-                <!-- Social Icons -->
-                <div class="social-nav flex-row gap-sm text-lg">
-                    <a href="#" class="text-white hover-text-primary transition-fast"><i
-                            class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="text-white hover-text-primary transition-fast"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="text-white hover-text-primary transition-fast"><i
-                            class="fa-brands fa-tiktok"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="nav-links-modern border-top-subtle">
-            <div class="container flex-row justify-around py-sm font-bold text-white text-sm">
-                <a href="index.html" class="hover-text-primary text-white">HOME</a>
-                <a href="#about" class="hover-text-primary text-white">ABOUT US</a>
-                <a href="#courses" class="hover-text-primary text-white">COURSES</a>
-                <a href="#reviews" class="hover-text-primary text-white">REVIEWS</a>
-                <a href="show-me-tell-me.html" class="hover-text-primary text-white">SHOW ME TELL ME</a>
-                <a href="#contact" class="hover-text-primary text-white">CONTACT US</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Promo Banner -->
-    <div class="promo-banner text-white font-bold text-center py-sm">
-        <i class="fa-solid fa-stopwatch text-xl"></i>
-        <span>Get an extra 5% (up to £200) off your course at point of purchase when you pay in full today!</span>
-    </div>
-
-    <!-- Trust Badges Bar -->
-    <div class="trust-bar bg-dark-blue text-white py-sm border-bottom-subtle">
-        <div class="container flex-row justify-around text-xs font-semibold">
-            <div class="flex-row gap-xs align-center"><i class="fa-solid fa-stopwatch"></i> Fast-track your driving
-                tests</div>
-            <div class="flex-row gap-xs align-center"><i class="fa-solid fa-pound-sign icon-circle-sm"></i> Money-Back
-                Guarantee</div>
-            <div class="flex-row gap-xs align-center"><i class="fa-solid fa-arrows-spin"></i> Flexible courses</div>
-            <div class="flex-row gap-xs align-center"><i class="fa-solid fa-money-bill-transfer"></i> Pay in instalments
-            </div>
-            <div class="flex-row gap-xs align-center"><i class="fa-solid fa-star text-light"></i> Great on Trustpilot
-            </div>
-        </div>
-    </div>
+    <site-header base-path=".."></site-header>
 
     <!-- Page Header -->
     <header class="page-header">
@@ -190,9 +111,6 @@
             <p class="text-lg max-w-lg mx-auto leading-relaxed text-muted">Master the DVSA vehicle safety questions
                 before your practical test. Learn exactly what the examiner will ask and how to answer confidently.</p>
         </div>
-        <!-- Animated Background Orbs -->
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
     </header>
 
     <main class="section container relative-z" style="min-height: 60vh; padding-top: 60px; padding-bottom: 80px;">
@@ -313,16 +231,14 @@
             <h3 class="font-outfit text-3xl font-bold text-white mb-sm">Ready to put your knowledge to the test?</h3>
             <p class="text-muted text-lg mb-medium max-w-lg mx-auto">Book an intensive driving course today and get
                 fast-tracked to your practical driving test in weeks, not months.</p>
-            <a href="index.html#book"
+            <a href="../index.html#book"
                 class="btn btn-pink px-lg py-medium font-bold text-lg radius-full shadow-md hover-scale glow-effect">Find
                 My Course</a>
         </div>
 
     </main>
 
-    <footer class="glass-dark border-top-subtle py-large text-center">
-        <p class="text-muted">© 2026 DriveElite. All rights reserved.</p>
-    </footer>
+    <site-footer base-path=".."></site-footer>
 
     <!-- Filter Script -->
     <script>

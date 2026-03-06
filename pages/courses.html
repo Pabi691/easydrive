@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving Courses | Easy-Drive.UK</title>
+    <meta name="description"
+        content="Explore our flexible intensive driving courses. From 10-hour refresher courses to 48-hour beginner packages.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Custom Web Components -->
+    <script src="../assets/js/header.js" defer></script>
+    <script src="../assets/js/footer.js" defer></script>
+    <style>
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
+
+        .page-header {
+            background: linear-gradient(to bottom right, var(--bg-main), var(--bg-secondary), #1a162b);
+            padding: 140px 0 80px 0;
+            color: white;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .course-card {
+            padding: 30px;
+            border-top: 4px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .course-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--success);
+            margin: 15px 0;
+        }
+
+        .course-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .course-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .course-features li i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <site-header base-path=".."></site-header>
+
+    <header class="page-header">
+        <div class="container relative-z">
+            <h1 class="font-outfit text-5xl font-bold mb-medium">Intensive Driving <span
+                    class="text-gradient">Courses</span></h1>
+            <p class="text-lg max-w-lg mx-auto leading-relaxed text-muted">Whether you're a complete beginner or near
+                test ready, we have a fast-track package tailored for your exact capability.</p>
+        </div>
+    </header>
+
+    <main class="section container relative-z">
+        <div class="course-grid">
+            <!-- Course 1 -->
+            <div class="course-card glass-panel">
+                <div>
+                    <span class="bg-blue text-white text-xs font-bold px-md py-xs radius-full">For Near Test
+                        Ready</span>
+                    <h4 class="font-outfit text-white mt-medium">10 Hour Refresher</h4>
+                    <p class="text-muted text-sm">Perfect if you failed a test recently and want a quick boost.</p>
+                    <div class="course-price font-outfit">£495</div>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> Fast-tracked Practical Test</li>
+                        <li><i class="fa-solid fa-check"></i> 1-on-1 Tuition</li>
+                        <li><i class="fa-solid fa-check"></i> Manual or Auto</li>
+                        <li><i class="fa-solid fa-check"></i> Home Pickup</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary w-full">Select Package</button>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="course-card glass-panel"
+                style="border-top-color: var(--success); box-shadow: 0 0 30px rgba(110, 183, 70, 0.2);">
+                <div>
+                    <span class="bg-success text-white text-xs font-bold px-md py-xs radius-full">Most Popular</span>
+                    <h4 class="font-outfit text-white mt-medium">25 Hour Intermediate</h4>
+                    <p class="text-muted text-sm">Ideal for learners with roughly 15-20 hours of prior experience.</p>
+                    <div class="course-price font-outfit">£1,150</div>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> Fast-tracked Practical Test</li>
+                        <li><i class="fa-solid fa-check"></i> PassProtect Guarantee Included</li>
+                        <li><i class="fa-solid fa-check"></i> 1-on-1 Tuition</li>
+                        <li><i class="fa-solid fa-check"></i> Manual or Auto</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary w-full" style="background: var(--success);">Select Package</button>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="course-card glass-panel">
+                <div>
+                    <span class="bg-primary text-white text-xs font-bold px-md py-xs radius-full"
+                        style="background: var(--primary);">Beginner Zero Experience</span>
+                    <h4 class="font-outfit text-white mt-medium">40 Hour Complete</h4>
+                    <p class="text-muted text-sm">For learners who have never sat behind the wheel before.</p>
+                    <div class="course-price font-outfit">£1,850</div>
+                    <ul class="course-features">
+                        <li><i class="fa-solid fa-check"></i> Fast-tracked Practical Test</li>
+                        <li><i class="fa-solid fa-check"></i> Fast-tracked Theory Test</li>
+                        <li><i class="fa-solid fa-check"></i> Comprehensive Foundation</li>
+                        <li><i class="fa-solid fa-check"></i> PassProtect Guarantee Included</li>
+                    </ul>
+                </div>
+                <button class="btn btn-outline w-full" style="color: white; border-color: var(--primary);">Select
+                    Package</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- NEW SECTION: Course Comparison -->
+    <section class="section relative-z"
+        style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <h2 class="font-outfit text-4xl font-bold mb-medium text-center">Which Course is <span
+                    class="text-gradient">Right For Me?</span></h2>
+            <div style="display: flex; gap: 30px; margin-top: 40px; flex-wrap: wrap;">
+                <div class="glass-panel p-medium radius-lg" style="flex: 1; min-width: 250px;">
+                    <h4 class="text-primary text-xl mb-xs"><i class="fa-solid fa-gauge-high mr-xs"></i> 10-Hour
+                        Refresher</h4>
+                    <p class="text-muted text-sm leading-relaxed">Choose this if you have recently failed a test with 5
+                        or fewer minor faults. It's meant strictly to polish up test routes, not to learn new maneuvers.
+                    </p>
+                </div>
+                <div class="glass-panel p-medium radius-lg"
+                    style="flex: 1; min-width: 250px; border-top: 2px solid var(--success);">
+                    <h4 class="text-success text-xl mb-xs"><i class="fa-solid fa-shield-cat mr-xs"></i> 25-Hour
+                        Intermediate</h4>
+                    <p class="text-muted text-sm leading-relaxed">Ideal if you can move off and stop smoothly, handle
+                        roundabouts, and have practiced at least one or two maneuvers with an instructor.</p>
+                </div>
+                <div class="glass-panel p-medium radius-lg" style="flex: 1; min-width: 250px;">
+                    <h4 class="text-white text-xl mb-xs"><i class="fa-solid fa-seedling mr-xs"></i> 40-Hour Complete
+                    </h4>
+                    <p class="text-muted text-sm leading-relaxed">Perfect if you haven't sat in the driver's seat
+                        before, or if you had a few lessons years ago but practically forgot everything.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: What's Included -->
+    <section class="section relative-z container">
+        <h2 class="font-outfit text-4xl font-bold mb-large text-center">What's <span
+                class="text-gradient">Included?</span></h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <div class="p-medium text-center">
+                <i class="fa-solid fa-calendar-check text-4xl text-primary mb-sm"></i>
+                <h4 class="text-white text-lg">Fast-Tracked Practical</h4>
+                <p class="text-muted text-sm">We beat the DVSA backlog so you test in weeks, not months.</p>
+            </div>
+            <div class="p-medium text-center">
+                <i class="fa-solid fa-mobile-screen-button text-4xl text-primary mb-sm"></i>
+                <h4 class="text-white text-lg">Theory App Premium</h4>
+                <p class="text-muted text-sm">Free access to full hazard perception and mock tests.</p>
+            </div>
+            <div class="p-medium text-center">
+                <i class="fa-solid fa-shield-halved text-4xl text-primary mb-sm"></i>
+                <h4 class="text-white text-lg">PassProtect Included</h4>
+                <p class="text-muted text-sm">If you don't pass, we pay for your next fast-tracked test.</p>
+            </div>
+            <div class="p-medium text-center">
+                <i class="fa-solid fa-house-chimney-user text-4xl text-primary mb-sm"></i>
+                <h4 class="text-white text-lg">Local Home Pickup</h4>
+                <p class="text-muted text-sm">Your instructor picks you up and drops you off from home/work.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: FAQ -->
+    <section class="section relative-z" style="background: rgba(0,0,0,0.2);">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="font-outfit text-4xl font-bold mb-large text-center">Course <span
+                    class="text-gradient">FAQs</span></h2>
+
+            <div class="glass-panel p-medium radius-md mb-sm">
+                <h4 class="text-white text-lg mb-xs">Do I need to pass my theory before booking?</h4>
+                <p class="text-muted text-sm">Not at all! You can book a course that includes a fast-tracked theory
+                    test. You must pass it before your practical test takes place.</p>
+            </div>
+            <div class="glass-panel p-medium radius-md mb-sm">
+                <h4 class="text-white text-lg mb-xs">Can I do the course over weekends?</h4>
+                <p class="text-muted text-sm">Yes, many of our instructors offer weekend flexibility. During booking,
+                    let us know your availability and we will match you accordingly.</p>
+            </div>
+            <div class="glass-panel p-medium radius-md">
+                <h4 class="text-white text-lg mb-xs">What happens if I need more hours?</h4>
+                <p class="text-muted text-sm">If your instructor feels you need a few extra hours before the test, these
+                    can be purchased directly through the instructor at their standard hourly rate.</p>
+            </div>
+        </div>
+    </section>
+
+    <site-footer base-path=".."></site-footer>
+</body>
+
+</html>

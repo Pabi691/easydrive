@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Easy-Drive.UK</title>
+    <meta name="description"
+        content="Learn more about Easy-Drive.UK, our mission to fast-track your driving success, and why thousands choose our intensive courses.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Custom Web Components -->
+    <script src="../assets/js/header.js" defer></script>
+    <script src="../assets/js/footer.js" defer></script>
+    <style>
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
+
+        .page-header {
+            background: linear-gradient(to bottom right, var(--bg-main), var(--bg-secondary), #1a162b);
+            padding: 140px 0 80px 0;
+            color: white;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(243, 112, 33, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Navigation -->
+    <site-header base-path=".."></site-header>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container relative-z">
+            <h1 class="font-outfit text-5xl font-bold mb-medium">About <span class="text-gradient">Easy-Drive.UK</span>
+            </h1>
+            <p class="text-lg max-w-lg mx-auto leading-relaxed text-muted">We believe learning to drive shouldn't take
+                years. Discover our mission to get you on the road safely and quickly.</p>
+        </div>
+    </header>
+
+    <main class="section container relative-z" style="padding-bottom: 80px;">
+        <div class="about-grid">
+            <div class="about-text" data-gsap="fade-right">
+                <h3 class="font-outfit text-white">Our Story & Mission</h3>
+                <p class="text-muted text-lg leading-relaxed mb-medium">
+                    Easy-Drive.UK was founded out of frustration with the traditional, painfully slow method of learning
+                    to drive. Waiting months for lessons and even longer for practical tests shouldn't be the norm.
+                </p>
+                <p class="text-muted text-lg leading-relaxed mb-medium">
+                    We designed a completely modern intensive course system that does the heavy lifting for you. We
+                    match you with top-tier, DVSA-approved local instructors and automatically fast-track your practical
+                    test, cutting out the waiting queues entirely. Our mission is to transform weeks and months of
+                    waiting into a clear, focused path to your driving licence.
+                </p>
+            </div>
+
+            <div class="about-image glass-panel p-large" data-gsap="fade-left">
+                <h3 class="font-outfit text-white mb-medium">Why Choose Us?</h3>
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                        <div>
+                            <strong class="text-white text-lg">Fast-Track Test Booking</strong>
+                            <p class="text-muted text-sm mt-xs">We use dedicated software to monitor DVSA cancellations,
+                                booking your test months before standard wait times.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon"><i class="fa-solid fa-user-check"></i></div>
+                        <div>
+                            <strong class="text-white text-lg">DVSA Approved Instructors</strong>
+                            <p class="text-muted text-sm mt-xs">Only strict, highly-rated local instructors who know
+                                your specific test routes.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <strong class="text-white text-lg">PassProtect Guarantee</strong>
+                            <p class="text-muted text-sm mt-xs">Failing happens. We give you a second (and third) chance
+                                for free if things go wrong on the day.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- NEW SECTION: Our Vehicles -->
+    <section class="section relative-z"
+        style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container flex-row align-center justify-between" style="gap: 50px; flex-wrap: wrap;">
+            <div class="vehicle-image glass-panel"
+                style="flex: 1; min-width: 300px; overflow: hidden; padding: 0; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80"
+                    alt="Modern Driving School Car"
+                    style="width: 100%; height: 100%; min-height: 300px; object-fit: cover; display: block;">
+            </div>
+            <div class="vehicle-info" style="flex: 1; min-width: 300px;">
+                <h2 class="font-outfit text-4xl font-bold mb-medium">Our Modern <span class="text-gradient">Fleet</span>
+                </h2>
+                <p class="text-muted text-lg leading-relaxed mb-medium">
+                    Learn to drive in comfort and style. All our instructors use modern, dual-controlled, highly-rated
+                    vehicles specifically chosen for their ease of use.
+                </p>
+                <ul class="feature-list mt-medium text-white">
+                    <li><i class="fa-solid fa-check text-success mr-xs"></i> <strong>Modern Hatchbacks:</strong> Perfect
+                        size for maneuvers</li>
+                    <li><i class="fa-solid fa-check text-success mr-xs"></i> <strong>Dual Controls:</strong> Keep you
+                        safe while you learn</li>
+                    <li><i class="fa-solid fa-check text-success mr-xs"></i> <strong>Manual & Auto Options:</strong>
+                        Choose what suits you best</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Meet the Instructors -->
+    <section class="section relative-z container">
+        <h2 class="font-outfit text-4xl font-bold mb-large text-center">Meet Our <span
+                class="text-gradient">Experts</span></h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+            <div class="instructor-card glass-panel radius-lg p-medium text-center">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80"
+                    alt="Sarah Davies" class="mx-auto mb-sm shadow-md"
+                    style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary);">
+                <h4 class="text-white text-xl">Sarah Davies</h4>
+                <p class="text-muted text-sm mt-xs">Grade A Instructor</p>
+            </div>
+            <div class="instructor-card glass-panel radius-lg p-medium text-center">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80"
+                    alt="Mark Lewis" class="mx-auto mb-sm shadow-md"
+                    style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--secondary);">
+                <h4 class="text-white text-xl">Mark Lewis</h4>
+                <p class="text-muted text-sm mt-xs">Auto Specialist</p>
+            </div>
+            <div class="instructor-card glass-panel radius-lg p-medium text-center">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80"
+                    alt="Nadia Khan" class="mx-auto mb-sm shadow-md"
+                    style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--success);">
+                <h4 class="text-white text-xl">Nadia Khan</h4>
+                <p class="text-muted text-sm mt-xs">Nervous Driver Expert</p>
+            </div>
+        </div>
+    </section>
+
+    <site-footer base-path=".."></site-footer>
+
+</body>
+
+</html>

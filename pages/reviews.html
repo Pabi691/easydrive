@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Reviews | Easy-Drive.UK</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Custom Web Components -->
+    <script src="../assets/js/header.js" defer></script>
+    <script src="../assets/js/footer.js" defer></script>
+    <style>
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
+
+        .page-header {
+            background: linear-gradient(to bottom right, var(--bg-main), var(--bg-secondary), #1a162b);
+            padding: 140px 0 80px 0;
+            color: white;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <site-header base-path=".."></site-header>
+
+    <header class="page-header">
+        <div class="container relative-z">
+            <h1 class="font-outfit text-5xl font-bold mb-medium">Student <span class="text-gradient">Reviews</span></h1>
+            <p class="text-lg max-w-lg mx-auto leading-relaxed text-muted">See why thousands of learners rate us as the
+                UK's fastest route to a driving licence.</p>
+        </div>
+    </header>
+
+    <main class="section container relative-z">
+        <div class="reviews-grid">
+            <!-- Review 1 -->
+            <div class="review-card glass-panel radius-lg p-medium border-border">
+                <div class="flex-row align-center justify-between mb-sm">
+                    <div class="flex-row align-center gap-sm">
+                        <div class="avatar bg-blue text-white font-bold icon-circle">JH</div>
+                        <div>
+                            <h4 class="font-bold text-white m-0">James Harrison</h4>
+                            <span class="text-xs text-muted">2 days ago</span>
+                        </div>
+                    </div>
+                    <i class="fa-brands fa-google text-blue text-xl"></i>
+                </div>
+                <div class="text-warning mb-sm text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-muted text-md leading-relaxed">"Passed first time with only 3 minor faults! The intensive
+                    course was structured perfectly and my instructor Sarah was incredibly patient. The fast-track test
+                    booking saved me months of waiting."</p>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card glass-panel radius-lg p-medium border-border">
+                <div class="flex-row align-center justify-between mb-sm">
+                    <div class="flex-row align-center gap-sm">
+                        <div class="avatar text-white font-bold icon-circle" style="background: var(--primary);">EW
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white m-0">Emma White</h4>
+                            <span class="text-xs text-muted">1 week ago</span>
+                        </div>
+                    </div>
+                    <i class="fa-brands fa-google text-blue text-xl"></i>
+                </div>
+                <div class="text-warning mb-sm text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-muted text-md leading-relaxed">"Easy-Drive.UK handled everything from start to finish. I
+                    failed my first test with a different company, but the 10-hour refresher course here got my
+                    confidence back. Highly recommended!"</p>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card glass-panel radius-lg p-medium border-border">
+                <div class="flex-row align-center justify-between mb-sm">
+                    <div class="flex-row align-center gap-sm">
+                        <div class="avatar bg-success text-white font-bold icon-circle">DP</div>
+                        <div>
+                            <h4 class="font-bold text-white m-0">David Patel</h4>
+                            <span class="text-xs text-muted">3 weeks ago</span>
+                        </div>
+                    </div>
+                    <i class="fa-brands fa-google text-blue text-xl"></i>
+                </div>
+                <div class="text-warning mb-sm text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-muted text-md leading-relaxed">"Great customer service guiding me through the automatic
+                    course options. The instructor was local and knew all the tricky test routes. Worth the investment
+                    for a quick pass."</p>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="review-card glass-panel radius-lg p-medium border-border">
+                <div class="flex-row align-center justify-between mb-sm">
+                    <div class="flex-row align-center gap-sm">
+                        <div class="avatar text-white font-bold icon-circle" style="background: var(--secondary);">SM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white m-0">Sarah Mitchell</h4>
+                            <span class="text-xs text-muted">1 month ago</span>
+                        </div>
+                    </div>
+                    <i class="fa-brands fa-google text-blue text-xl"></i>
+                </div>
+                <div class="text-warning mb-sm text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-muted text-md leading-relaxed">"I was so nervous to start driving, but the 40-hour
+                    beginner course was fantastic. My instructor was calm and clear. The fast-tracked theory and
+                    practical test meant I was fully licenced in under 2 months!"</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- NEW SECTION: Video Testimonials -->
+    <section class="section relative-z"
+        style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <h2 class="font-outfit text-4xl font-bold mb-large text-center">Watch Their <span
+                    class="text-gradient">Success</span></h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="glass-panel"
+                    style="aspect-ratio: 16/9; position: relative; border-radius: 12px; overflow: hidden; background: url('https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80') center/cover;">
+                    <button class="icon-circle"
+                        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: var(--primary); color: white; border: none; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(243, 112, 33, 0.5);">
+                        <i class="fa-solid fa-play" style="margin-left: 5px;"></i>
+                    </button>
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; right: 0; padding: 15px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <span class="text-white font-bold">Liam | Passed in 2 Weeks</span>
+                    </div>
+                </div>
+                <div class="glass-panel"
+                    style="aspect-ratio: 16/9; position: relative; border-radius: 12px; overflow: hidden; background: url('https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?auto=format&fit=crop&w=800&q=80') center/cover;">
+                    <button class="icon-circle"
+                        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: var(--primary); color: white; border: none; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(243, 112, 33, 0.5);">
+                        <i class="fa-solid fa-play" style="margin-left: 5px;"></i>
+                    </button>
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; right: 0; padding: 15px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <span class="text-white font-bold">Chloe | Overcame Test Anxiety</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Success Stats -->
+    <section class="section relative-z container">
+        <div class="glass-panel p-large radius-lg"
+            style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 30px; text-align: center;">
+            <div>
+                <div class="text-5xl font-bold font-outfit text-primary mb-xs">8,400+</div>
+                <div class="text-muted text-sm text-uppercase tracking-wide">Students Passed</div>
+            </div>
+            <div>
+                <div class="text-5xl font-bold font-outfit text-success mb-xs">84%</div>
+                <div class="text-muted text-sm text-uppercase tracking-wide">1st Time Pass Rate</div>
+            </div>
+            <div>
+                <div class="text-5xl font-bold font-outfit text-white mb-xs">28</div>
+                <div class="text-muted text-sm text-uppercase tracking-wide">Average Days to License</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Leave a Review -->
+    <section class="section relative-z text-center">
+        <div class="container">
+            <h2 class="font-outfit text-4xl font-bold mb-sm">Already <span class="text-gradient">Passed?</span></h2>
+            <p class="text-muted text-lg max-w-lg mx-auto mb-medium">We love hearing from our successful students.
+                Please share your story to help future learners choose Easy-Drive.UK.</p>
+            <div class="flex-row justify-center gap-medium">
+                <a href="#" class="btn glass-btn" style="border-color: #00b67a; color: #00b67a;"><i
+                        class="fa-solid fa-star mr-xs"></i> Trustpilot</a>
+                <a href="#" class="btn glass-btn" style="border-color: #4285F4; color: #4285F4;"><i
+                        class="fa-brands fa-google mr-xs"></i> Google Review</a>
+            </div>
+        </div>
+    </section>
+
+    <site-footer base-path=".."></site-footer>
+</body>
+
+</html>

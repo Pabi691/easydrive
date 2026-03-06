@@ -2,19 +2,20 @@
 :root {
     --bg-main: #0a0a0f;
     --bg-secondary: #14141d;
-    --primary: #2bcd5a;
-    /* --primary: #6366f1; */
-    --primary-glow: rgba(43, 203, 90, 0.6);
-    --secondary: #03064e;
-    /* --secondary: #ec4899; */
-    --accent: #06b6d4;
+    --primary: #f37021;
+    /* Orange */
+    --primary-glow: rgba(243, 112, 33, 0.6);
+    --secondary: #004883;
+    /* Dark Blue */
+    --accent: #6eb746;
+    /* Green */
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
     --gradient-1: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    --gradient-2: linear-gradient(45deg, #4f46e5, #06b6d4);
-    --success: #10b981;
+    --gradient-2: linear-gradient(45deg, #004883, #6eb746);
+    --success: #6eb746;
 }
 
 * {
@@ -134,7 +135,9 @@ ul {
 }
 
 .btn-outline:hover {
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--primary);
+    color: white !important;
+    border-color: var(--primary);
     box-shadow: 0 0 15px var(--primary-glow);
 }
 
@@ -295,6 +298,20 @@ ul {
 }
 
 /* Spacing & Utilities */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
 .py-sm {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -477,6 +494,10 @@ ul {
 
 .justify-around {
     justify-content: space-around;
+}
+
+.justify-center {
+    justify-content: center;
 }
 
 /* Hero Redesign / Dark Theme */

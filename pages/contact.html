@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Easy-Drive.UK</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Custom Web Components -->
+    <script src="../assets/js/header.js" defer></script>
+    <script src="../assets/js/footer.js" defer></script>
+    <style>
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
+
+        .page-header {
+            background: linear-gradient(to bottom right, var(--bg-main), var(--bg-secondary), #1a162b);
+            padding: 140px 0 80px 0;
+            color: white;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-form {
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .contact-info {
+            padding: 40px;
+            background: rgba(0, 72, 131, 0.2);
+            /* secondary color low opacity */
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <site-header base-path=".."></site-header>
+
+    <header class="page-header">
+        <div class="container relative-z">
+            <h1 class="font-outfit text-5xl font-bold mb-medium">Get In <span class="text-gradient">Touch</span></h1>
+            <p class="text-lg max-w-lg mx-auto leading-relaxed text-muted">Ready to start your journey? Have a question
+                about our intensive courses? We're here to help.</p>
+        </div>
+    </header>
+
+    <main class="section container relative-z">
+        <div class="contact-grid">
+            <div class="contact-form glass-panel radius-lg">
+                <h3 class="font-outfit text-white mb-medium text-2xl">Send us a message</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-control" placeholder="07777 777777">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea class="form-control" rows="5"
+                            placeholder="I'm interested in the 25 hour intermediate course..."></textarea>
+                    </div>
+                    <div class="form-group" style="display: flex; gap: 10px; align-items: start; margin-top: 15px;">
+                        <input type="checkbox" id="privacy-consent" name="privacy-consent" required
+                            style="margin-top: 5px;">
+                        <label for="privacy-consent" class="text-sm">I consent to having this website store and process
+                            my personal data in order to respond to my enquiry. I have read and agree to the Privacy
+                            Policy.</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-sm px-lg">Send Message <i
+                            class="fa-solid fa-paper-plane ml-xs"></i></button>
+                </form>
+            </div>
+
+            <div class="contact-info column relative-z">
+                <h3 class="font-outfit text-white mb-medium text-2xl">Contact Information</h3>
+                <p class="text-muted mb-large">Our team is available Monday to Friday from 8am to 8pm to assist you with
+                    booking issues and course inquiries.</p>
+
+                <div class="info-item">
+                    <div class="info-icon text-white"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <span class="text-muted text-sm block">Call Us</span>
+                        <strong class="text-white text-lg">07777777777</strong>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon text-white"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div>
+                        <span class="text-muted text-sm block">WhatsApp Us</span>
+                        <strong class="text-white text-lg">07777 777777</strong>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon text-white"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <span class="text-muted text-sm block">Email Us</span>
+                        <strong class="text-white text-lg">support@easy-drive.uk</strong>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon text-white"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <span class="text-muted text-sm block">Headquarters</span>
+                        <strong class="text-white text-lg">Manchester, UK</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- NEW SECTION: Office Location Maps -->
+    <section class="section relative-z"
+        style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <h2 class="font-outfit text-4xl font-bold mb-medium text-center">Visit Our <span
+                    class="text-gradient">Headquarters</span></h2>
+            <div class="interactive-map-wrapper glass-panel radius-lg shadow-xl"
+                style="padding: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                <iframe id="location-map" width="100%" height="450"
+                    style="border:0; border-radius: 8px; filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(85%);"
+                    loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+                    src="https://maps.google.com/maps?q=Manchester,UK&t=m&z=10&output=embed&iwloc=near">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Areas We Cover List -->
+    <section class="section relative-z">
+        <div class="container text-center">
+            <h2 class="font-outfit text-4xl font-bold mb-medium">Areas We <span class="text-gradient">Cover</span></h2>
+            <p class="text-muted text-lg max-w-lg mx-auto mb-large">Our DVSA-approved instructors operate across a wide
+                network. Below are just some of the major regions we serve for our intensive driving courses.</p>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                <span class="glass-btn px-lg py-sm radius-full"><i
+                        class="fa-solid fa-location-dot text-primary mr-xs"></i> Manchester</span>
+                <span class="glass-btn px-lg py-sm radius-full"><i
+                        class="fa-solid fa-location-dot text-primary mr-xs"></i> London</span>
+                <span class="glass-btn px-lg py-sm radius-full"><i
+                        class="fa-solid fa-location-dot text-primary mr-xs"></i> Birmingham</span>
+                <span class="glass-btn px-lg py-sm radius-full"><i
+                        class="fa-solid fa-location-dot text-primary mr-xs"></i> Leeds</span>
+                <span class="glass-btn px-lg py-sm radius-full"><i
+                        class="fa-solid fa-location-dot text-primary mr-xs"></i> Liverpool</span>
+                <span class="glass-btn px-lg py-sm radius-full"><i
+                        class="fa-solid fa-location-dot text-primary mr-xs"></i> Glasgow</span>
+                <span class="glass-btn px-lg py-sm radius-full"><i
+                        class="fa-solid fa-location-dot text-primary mr-xs"></i> Sheffield</span>
+                <span class="glass-btn px-lg py-sm radius-full"><i
+                        class="fa-solid fa-location-dot text-primary mr-xs"></i> Bristol</span>
+            </div>
+        </div>
+    </section>
+
+    <site-footer base-path=".."></site-footer>
+</body>
+
+</html>
