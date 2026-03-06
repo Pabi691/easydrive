@@ -32,8 +32,8 @@ function SteeringWheel() {
                 </mesh>
             ))}
             {/* Center hub */}
-            <mesh position={[0, 0, 0.05]}>
-                <cylinderGeometry args={[0.25, 0.25, 0.1, 32]} rotation={[Math.PI / 2, 0, 0]} />
+            <mesh position={[0, 0, 0.05]} rotation={[Math.PI / 2, 0, 0]}>
+                <cylinderGeometry args={[0.25, 0.25, 0.1, 32]} />
                 <meshStandardMaterial color="#f37021" metalness={0.5} roughness={0.3} />
             </mesh>
         </group>

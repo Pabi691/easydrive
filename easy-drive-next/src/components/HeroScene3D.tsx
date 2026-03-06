@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, MeshDistortMaterial, Sphere, Torus, RoundedBox, MeshTransmissionMaterial } from "@react-three/drei";
+import { Float, MeshDistortMaterial, Sphere, Torus, RoundedBox } from "@react-three/drei";
 import { useRef, useMemo } from "react";
 import * as THREE from "three";
 
@@ -43,15 +43,15 @@ function FloatingCar() {
                     <meshPhysicalMaterial color="#87ceeb" metalness={0.1} roughness={0} transmission={0.6} thickness={0.3} />
                 </RoundedBox>
                 {/* Wheels */}
-                {[[-0.7, -0.35, 0.65], [-0.7, -0.35, -0.65], [0.7, -0.35, 0.65], [0.7, -0.35, -0.65]].map((pos, i) => (
-                    <mesh key={i} position={pos as [number, number, number]} rotation={[Math.PI / 2, 0, 0]}>
+                {([[-0.7, -0.35, 0.65], [-0.7, -0.35, -0.65], [0.7, -0.35, 0.65], [0.7, -0.35, -0.65]] as [number, number, number][]).map((pos, i) => (
+                    <mesh key={i} position={pos} rotation={[Math.PI / 2, 0, 0]}>
                         <cylinderGeometry args={[0.2, 0.2, 0.12, 24]} />
                         <meshStandardMaterial color="#1a1a2e" metalness={0.5} roughness={0.4} />
                     </mesh>
                 ))}
                 {/* Headlights */}
-                {[[1.2, 0.05, 0.4], [1.2, 0.05, -0.4]].map((pos, i) => (
-                    <mesh key={i} position={pos as [number, number, number]}>
+                {([[1.2, 0.05, 0.4], [1.2, 0.05, -0.4]] as [number, number, number][]).map((pos, i) => (
+                    <mesh key={i} position={pos}>
                         <sphereGeometry args={[0.08, 16, 16]} />
                         <meshStandardMaterial color="#fffbe6" emissive="#fffbe6" emissiveIntensity={2} />
                     </mesh>
@@ -83,7 +83,10 @@ function ParticleField() {
     return (
         <points ref={ref}>
             <bufferGeometry>
-                <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+                <bufferAttribute
+                    attach="attributes-position"
+                    args={[positions, 3]}
+                />
             </bufferGeometry>
             <pointsMaterial size={0.04} color="#f37021" transparent opacity={0.5} sizeAttenuation />
         </points>
