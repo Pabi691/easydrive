@@ -1,97 +1,72 @@
-import { Metadata } from "next";
+"use client";
+
+import { motion } from "framer-motion";
+import Courses from "@/components/Courses";
 import Link from "next/link";
-import { FaCheck, FaStar } from "react-icons/fa6";
-
-export const metadata: Metadata = {
-    title: "Courses",
-    description: "Explore Easy-Drive.UK's intensive, semi-intensive, and refresher driving courses.",
-};
-
-const courses = [
-    {
-        badge: "Beginner Zero Experience",
-        title: "40 Hour Complete",
-        desc: "For learners who have never sat behind the wheel before.",
-        price: "£1,850",
-        features: ["Fast-tracked Practical Test", "Fast-tracked Theory Test", "Comprehensive Foundation", "PassProtect Guarantee Included"],
-        popular: false,
-    },
-    {
-        badge: "Most Popular",
-        title: "30 Hour Intensive",
-        desc: "For learners with some previous experience wanting to pass fast.",
-        price: "£1,450",
-        features: ["Fast-tracked Practical Test", "Theory Test Support", "Focused Intensive Training", "PassProtect Guarantee Included"],
-        popular: true,
-    },
-    {
-        badge: "Refresher",
-        title: "10 Hour Top-Up",
-        desc: "For near-test-ready learners or those who failed recently.",
-        price: "£650",
-        features: ["Fast-tracked Practical Test", "Test Route Practice", "Mock Test Session", "Confidence Builder"],
-        popular: false,
-    },
-];
 
 export default function CoursesPage() {
     return (
-        <>
-            <section className="bg-gradient-to-br from-slate-50 via-orange-50/30 to-blue-50/20 py-20 md:py-28 text-center">
-                <div className="max-w-4xl mx-auto px-4">
-                    <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Our <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Course Packages</span></h1>
-                    <p className="text-lg text-muted max-w-xl mx-auto">Choose the course that fits your experience level and budget. All courses include a fast-tracked test date.</p>
-                </div>
-            </section>
+        <div className="pt-32 pb-24 bg-white relative overflow-hidden">
+            <div className="absolute -left-16 top-16 h-72 w-72 rounded-full bg-blue-100/70 blur-3xl -z-10" />
+            <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-orange-100/70 blur-3xl -z-10" />
+            <div className="container mx-auto px-6 md:px-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center max-w-3xl mx-auto mb-10"
+                >
+                    <span className="text-brand-orange font-bold text-sm tracking-wider uppercase mb-4 block">Our Curriculum</span>
+                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.05]">
+                        Detailed Driving Courses
+                    </h1>
+                    <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-6">
+                        Explore our comprehensive range of courses tailored to fit your experience level, budget, and timeline.
+                    </p>
+                </motion.div>
 
-            <section className="py-20">
-                <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
-                    {courses.map((course) => (
-                        <div key={course.title} className={`bg-white rounded-2xl border shadow-sm p-8 flex flex-col relative ${course.popular ? "border-primary shadow-xl scale-105" : "border-gray-100"}`}>
-                            {course.popular && (
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white text-xs font-bold px-4 py-1 rounded-full">
-                                    Most Popular
-                                </div>
-                            )}
-                            <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-4 self-start ${course.popular ? "bg-primary/10 text-primary" : "bg-accent/10 text-accent"}`}>
-                                {course.badge}
-                            </span>
-                            <h3 className="text-2xl font-extrabold mb-2">{course.title}</h3>
-                            <p className="text-muted text-sm mb-4">{course.desc}</p>
-                            <p className="text-4xl font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">{course.price}</p>
-                            <ul className="space-y-3 flex-1">
-                                {course.features.map((f) => (
-                                    <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
-                                        <FaCheck className="text-accent flex-shrink-0" /> {f}
-                                    </li>
-                                ))}
+                {/* Reusing existing component for consistency */}
+                <Courses />
+
+                <section className="mt-20 grid gap-6 md:grid-cols-3">
+                    {[
+                        {
+                            title: "Beginner Path",
+                            points: ["No experience needed", "Structured weekly coaching", "Confidence-first approach"],
+                            bg: "bg-blue-50",
+                        },
+                        {
+                            title: "Fast Pass Path",
+                            points: ["1-2 week intensive options", "Priority test booking", "Daily feedback and mock tests"],
+                            bg: "bg-orange-50",
+                        },
+                        {
+                            title: "Post-Pass Path",
+                            points: ["Pass Plus modules", "Motorway confidence", "Night and weather driving"],
+                            bg: "bg-green-50",
+                        },
+                    ].map((path) => (
+                        <div key={path.title} className={`rounded-3xl border border-slate-200 p-8 ${path.bg}`}>
+                            <h3 className="text-2xl font-bold text-slate-900 mb-4">{path.title}</h3>
+                            <ul className="space-y-2 text-slate-700">
+                                {path.points.map((point) => <li key={point}>- {point}</li>)}
                             </ul>
-                            <Link href="/contact" className={`mt-8 text-center py-3 rounded-full font-bold transition-all ${course.popular ? "bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg" : "border-2 border-primary text-primary hover:bg-primary hover:text-white"}`}>
-                                Select Package
-                            </Link>
                         </div>
                     ))}
-                </div>
-            </section>
+                </section>
 
-            {/* FAQ */}
-            <section className="py-20 bg-slate-50/50">
-                <div className="max-w-3xl mx-auto px-4">
-                    <h2 className="text-3xl font-extrabold text-center mb-10">Course <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">FAQs</span></h2>
-                    <div className="space-y-4">
-                        {[
-                            { q: "How quickly can I pass?", a: "Most students on our intensive courses pass within 1-2 weeks." },
-                            { q: "What's included in the price?", a: "All courses include lesson hours, fast-tracked test booking, and instructor support." },
-                            { q: "Can I pay in instalments?", a: "Yes, we offer flexible payment plans. Contact us for details." },
-                        ].map((faq) => (
-                            <div key={faq.q} className="bg-white rounded-xl border border-gray-100 p-6">
-                                <h4 className="font-bold mb-2">{faq.q}</h4>
-                                <p className="text-muted text-sm">{faq.a}</p>
-                            </div>
-                        ))}
+                <section className="mt-16 rounded-[2rem] bg-gradient-to-r from-slate-900 to-slate-800 p-10 md:p-12 text-white text-center">
+                    <h2 className="text-3xl md:text-4xl font-extrabold mb-3">Need Help Choosing a Course?</h2>
+                    <p className="text-slate-200 mb-7 max-w-2xl mx-auto">
+                        We can recommend the right package in one quick call based on your experience and deadline.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-3">
+                        <a href="tel:+448001234567" className="rounded-full bg-white px-7 py-3 font-semibold text-slate-900">Call 0800 123 4567</a>
+                        <a href="https://wa.me/447777777777" className="rounded-full bg-green-600 px-7 py-3 font-semibold text-white">WhatsApp Chat</a>
+                        <Link href="/contact" className="rounded-full border border-white/30 bg-white/10 px-7 py-3 font-semibold text-white">Enquire Online</Link>
                     </div>
-                </div>
-            </section>
-        </>
+                </section>
+            </div>
+        </div>
     );
 }

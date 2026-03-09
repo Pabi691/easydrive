@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+import "leaflet/dist/leaflet.css";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const inter = Inter({
@@ -9,17 +10,12 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-});
-
 export const metadata: Metadata = {
   title: {
-    default: "Easy-Drive.UK | Intensive Driving Courses",
+    default: "Easy-Drive.UK | Premium Driving School",
     template: "%s | Easy-Drive.UK",
   },
-  description: "Fast-track your way to a driving license with Easy-Drive.UK intensive courses, DVSA-approved instructors, and our PassProtect guarantee.",
+  description: "Fast-track your way to a driving license with Easy-Drive.UK intensive courses, DVSA-approved instructors.",
   robots: {
     index: false,
     follow: false,
@@ -32,9 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
-      <body className="antialiased">
-        <Header />
+    <html lang="en" className={`${inter.variable}`}>
+      <body className="antialiased font-sans bg-white text-slate-900">
+        <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
