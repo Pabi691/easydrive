@@ -15,10 +15,10 @@ const cities = [
 export default function CityMap() {
     return (
         <MapContainer
-            center={[53.2, -2.5]}
-            zoom={6}
-            minZoom={5}
-            maxZoom={10}
+            bounds={[
+                [49.8, -8.6],
+                [58.8, 2.2],
+            ]}
             scrollWheelZoom={false}
             className="h-full w-full"
         >
