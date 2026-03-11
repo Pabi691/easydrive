@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import Reviews from "@/components/Reviews";
 import { FaGoogle, FaFacebook, FaStar } from "react-icons/fa6";
@@ -12,7 +13,7 @@ export default function ReviewsPage() {
         highlight: "Rated excellent across Google, Trustpilot, and Facebook.",
     };
 
-    const platformMap: Record<string, { icon: JSX.Element; badge: string }> = {
+    const platformMap: Record<string, { icon: ReactNode; badge: string }> = {
         Google: {
             icon: <FaGoogle className="text-blue-600" />,
             badge: "bg-blue-50 text-blue-700 border-blue-100",
