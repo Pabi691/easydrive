@@ -74,7 +74,7 @@ export default function ShowMeTellMePage() {
                         <h2 className="text-2xl font-extrabold mb-3">Ready to Test Your Knowledge?</h2>
                         <p className="opacity-90 mb-6">Practice these questions until you&apos;re confident. Then let us help you pass your practical test.</p>
                         <div className="flex flex-wrap justify-center gap-3">
-                            <Link href="/courses" className="bg-white text-green-700 px-8 py-3 rounded-full font-bold hover:shadow-xl transition-all">
+                            <Link href="/services" className="bg-white text-green-700 px-8 py-3 rounded-full font-bold hover:shadow-xl transition-all">
                                 View Our Courses
                             </Link>
                             <a href="tel:+448001234567" className="bg-slate-900 text-white px-8 py-3 rounded-full font-bold hover:shadow-xl transition-all inline-flex items-center gap-2">

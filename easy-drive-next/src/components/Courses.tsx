@@ -1,38 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Settings, Gamepad2, Zap, ShieldCheck, ArrowRight } from "lucide-react";
-
-const courses = [
-    {
-        title: "Automatic Lessons",
-        description: "Learn faster without the hassle of gears and clutch control. Perfect for quick passes and city driving.",
-        icon: <Gamepad2 size={24} className="text-blue-500" />,
-        image: "/images/hero.png",
-        color: "bg-blue-50 text-blue-600",
-    },
-    {
-        title: "Manual Lessons",
-        description: "The traditional way. Gain a full license that allows you to drive any car, anywhere in the world.",
-        icon: <Settings size={24} className="text-slate-700" />,
-        image: "/images/hero_driving.png",
-        color: "bg-slate-100 text-slate-700",
-    },
-    {
-        title: "Intensive Crash Course",
-        description: "Pass your test in just 1 to 4 weeks with intensive daily driving sessions. Fast-track test included.",
-        icon: <Zap size={24} className="text-purple-500" />,
-        image: "/images/success.png",
-        color: "bg-purple-50 text-purple-600",
-    },
-    {
-        title: "Pass Plus Course",
-        description: "Build confidence after passing. Learn motorway driving, night driving, and advanced hazard perception.",
-        icon: <ShieldCheck size={24} className="text-green-500" />,
-        image: "/images/isometric_3d.png",
-        color: "bg-green-50 text-green-600",
-    },
-];
+import { courses } from "@/data/courses";
 
 import { Variants } from "framer-motion";
 
@@ -49,6 +20,20 @@ const itemVariants: Variants = {
 };
 
 export default function Courses() {
+    const iconMap: Record<string, JSX.Element> = {
+        automatic: <Gamepad2 size={24} className="text-blue-500" />,
+        manual: <Settings size={24} className="text-slate-700" />,
+        intensive: <Zap size={24} className="text-purple-500" />,
+        "pass-plus": <ShieldCheck size={24} className="text-green-500" />,
+    };
+
+    const badgeMap: Record<string, string> = {
+        automatic: "bg-blue-50 text-blue-600",
+        manual: "bg-slate-100 text-slate-700",
+        intensive: "bg-purple-50 text-purple-600",
+        "pass-plus": "bg-green-50 text-green-600",
+    };
+
     return (
         <section id="courses" className="py-28 bg-gradient-to-b from-white via-blue-50/45 to-white relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('/images/hero.png')] bg-cover bg-center opacity-[0.14]" />
@@ -83,7 +68,9 @@ export default function Courses() {
                     viewport={{ once: true, margin: "-50px" }}
                     className="grid md:grid-cols-2 lg:grid-cols-4 gap-7"
                 >
-                    {courses.map((course, idx) => (
+                    {courses.map((course, idx) => {
+                        const badgeClass = badgeMap[course.slug] ?? "bg-slate-100 text-slate-700";
+                        return (
                         <motion.div
                             key={idx}
                             variants={itemVariants}
@@ -98,7 +85,7 @@ export default function Courses() {
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-sm border border-white/70">
-                                    {course.icon}
+                                    {iconMap[course.slug]}
                                 </div>
                             </div>
 
@@ -106,15 +93,24 @@ export default function Courses() {
                             <div className="p-6 flex flex-col flex-grow">
                                 <h3 className="text-2xl font-bold text-slate-900 mb-3 leading-tight">{course.title}</h3>
                                 <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
-                                    {course.description}
+                                    {course.summary}
                                 </p>
-                                <button className="flex items-center gap-2 text-sm font-semibold text-slate-900 group/btn mt-auto">
-                                    Explore Course
-                                    <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-                                </button>
+                                <div className="mt-auto flex items-center justify-between">
+                                    <span className={`text-xs font-semibold px-3 py-1.5 rounded-full ${badgeClass}`}>
+                                        {course.badges[0]}
+                                    </span>
+                                    <Link
+                                        href={`/services/${course.slug}`}
+                                        className="flex items-center gap-2 text-sm font-semibold text-slate-900 group/btn"
+                                    >
+                                        Explore Course
+                                        <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                                    </Link>
+                                </div>
                             </div>
                         </motion.div>
-                    ))}
+                        );
+                    })}
                 </motion.div>
             </div>
         </section>

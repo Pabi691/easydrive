@@ -1,46 +1,19 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { FaCar, FaGears, FaGaugeHigh, FaAward, FaCircleCheck, FaArrowRight, FaPhone, FaWhatsapp } from "react-icons/fa6";
+import { courses } from "@/data/courses";
 
 export const metadata: Metadata = {
     title: "Our Services",
     description: "Explore our driving services including automatic, manual, intensive lessons and Pass Plus certification.",
 };
 
-const services = [
-    {
-        icon: <FaCar className="text-3xl" />,
-        title: "Automatic Driving Lessons",
-        desc: "Learn to drive with ease in our modern, dual-controlled automatic vehicles. Perfect for beginners who want to focus purely on road skills without worrying about gear changes.",
-        features: ["Modern dual-controlled autos", "Perfect for nervous learners", "Quicker to learn", "Growing in popularity"],
-        color: "from-orange-500 to-red-500",
-        image: "/images/hero.png",
-    },
-    {
-        icon: <FaGears className="text-3xl" />,
-        title: "Manual Driving Lessons",
-        desc: "Master the art of manual driving. Full control over your vehicle with dedicated clutch and gear training, giving you the freedom to drive any car on the road.",
-        features: ["Full vehicle mastery", "Drive any car type", "Better fuel economy", "Greater car selection"],
-        color: "from-blue-600 to-indigo-600",
-        image: "/images/hero_driving.png",
-    },
-    {
-        icon: <FaGaugeHigh className="text-3xl" />,
-        title: "Intensive Driving Lessons",
-        desc: "Our flagship service. Condense months of traditional lessons into a focused 1-2 week intensive course. Ideal for those who need to pass quickly.",
-        features: ["Pass in 1-2 weeks", "Fast-track test booking", "Dedicated 1-on-1 training", "Structured daily schedule"],
-        color: "from-green-500 to-emerald-600",
-        image: "/images/success.png",
-    },
-    {
-        icon: <FaAward className="text-3xl" />,
-        title: "Pass Plus",
-        desc: "Already passed your test? Take your skills to the next level with our Pass Plus certification covering motorways, night driving, and adverse weather conditions.",
-        features: ["Motorway training", "Night driving skills", "All-weather confidence", "Insurance discounts"],
-        color: "from-purple-500 to-pink-500",
-        image: "/images/isometric_3d.png",
-    },
-];
+const iconMap: Record<string, JSX.Element> = {
+    automatic: <FaCar className="text-3xl" />,
+    manual: <FaGears className="text-3xl" />,
+    intensive: <FaGaugeHigh className="text-3xl" />,
+    "pass-plus": <FaAward className="text-3xl" />,
+};
 
 export default function ServicesPage() {
     return (
@@ -71,34 +44,42 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
-                    {services.map((service) => (
+                    {courses.map((course) => (
                         <div
-                            key={service.title}
+                            key={course.title}
                             className="liquid-glass rounded-3xl overflow-hidden border border-white/70"
                         >
                             <div className="h-44 relative">
-                                <img src={service.image} alt={service.title} className="h-full w-full object-cover" />
-                                <div className={`absolute inset-x-0 top-0 h-2 bg-gradient-to-r ${service.color}`} />
+                                <img src={course.image} alt={course.title} className="h-full w-full object-cover" />
+                                <div className={`absolute inset-x-0 top-0 h-2 bg-gradient-to-r ${course.gradient}`} />
                             </div>
                             <div className="p-8">
-                                <div className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center text-white mb-5`}>
-                                    {service.icon}
+                                <div className={`w-14 h-14 bg-gradient-to-br ${course.gradient} rounded-xl flex items-center justify-center text-white mb-5`}>
+                                    {iconMap[course.slug]}
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-slate-900">{service.title}</h3>
-                                <p className="text-slate-600 leading-relaxed mb-5">{service.desc}</p>
+                                <h3 className="text-2xl font-bold mb-3 text-slate-900">{course.title}</h3>
+                                <p className="text-slate-600 leading-relaxed mb-5">{course.summary}</p>
                                 <ul className="space-y-2">
-                                    {service.features.map((f) => (
+                                    {course.highlights.slice(0, 4).map((f) => (
                                         <li key={f} className="flex items-center gap-2 text-sm text-slate-700">
                                             <FaCircleCheck className="text-green-500 flex-shrink-0" /> {f}
                                         </li>
                                     ))}
                                 </ul>
-                                <Link
-                                    href="/contact"
-                                    className={`mt-6 inline-flex items-center gap-2 bg-gradient-to-r ${service.color} text-white px-6 py-2.5 rounded-full text-sm font-bold hover:shadow-lg transition-all`}
-                                >
-                                    Enquire Now <FaArrowRight />
-                                </Link>
+                                <div className="mt-6 flex flex-wrap gap-3">
+                                    <Link
+                                        href={`/services/${course.slug}`}
+                                        className={`inline-flex items-center gap-2 bg-gradient-to-r ${course.gradient} text-white px-6 py-2.5 rounded-full text-sm font-bold hover:shadow-lg transition-all`}
+                                    >
+                                        Course Details <FaArrowRight />
+                                    </Link>
+                                    <Link
+                                        href="/contact"
+                                        className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-colors"
+                                    >
+                                        Enquire Now
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     ))}

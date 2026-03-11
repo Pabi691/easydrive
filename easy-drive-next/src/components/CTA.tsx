@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, PhoneCall, MessageCircle } from "lucide-react";
 
@@ -34,10 +35,13 @@ export default function CTA() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-                                <button className="bg-slate-900 text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2 group/btn">
+                                <Link
+                                    href="/services"
+                                    className="bg-slate-900 text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2 group/btn"
+                                >
                                     View Courses
                                     <ArrowRight size={20} className="group-hover/btn:translate-x-1 transition-transform" />
-                                </button>
+                                </Link>
                                 <a href="tel:+448001234567" className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl text-lg font-medium hover:bg-slate-50 transition-all shadow-sm hover:shadow-md hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2">
                                     <PhoneCall size={20} className="text-slate-500" />
                                     Call Now

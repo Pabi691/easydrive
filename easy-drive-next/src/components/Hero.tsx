@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { CheckCircle, Award, Star, FastForward, PhoneCall, MessageCircle } from "lucide-react";
 
@@ -41,12 +42,18 @@ export default function Hero() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-16">
-                            <button className="bg-gradient-to-r from-brand-orange to-orange-600 text-white px-8 py-4 rounded-2xl text-lg font-bold hover:-translate-y-0.5 transition-all shadow-[0_16px_34px_-18px_rgba(243,112,33,.78)] active:scale-95">
+                            <Link
+                                href="/services"
+                                className="bg-gradient-to-r from-brand-orange to-orange-600 text-white px-8 py-4 rounded-2xl text-lg font-bold hover:-translate-y-0.5 transition-all shadow-[0_16px_34px_-18px_rgba(243,112,33,.78)] active:scale-95 text-center"
+                            >
                                 View Courses
-                            </button>
-                            <button className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-slate-50 transition-all active:scale-95 shadow-sm">
+                            </Link>
+                            <Link
+                                href="/contact"
+                                className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-slate-50 transition-all active:scale-95 shadow-sm text-center"
+                            >
                                 Book Lesson
-                            </button>
+                            </Link>
                         </div>
 
                         <div className="mb-10 flex flex-wrap items-center gap-3">

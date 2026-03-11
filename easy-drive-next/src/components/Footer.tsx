@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
+import { courses } from "@/data/courses";
 
 export default function Footer() {
     return (
@@ -35,21 +36,16 @@ export default function Footer() {
                     <div>
                         <h4 className="font-semibold text-slate-900 mb-6">Driving Courses</h4>
                         <ul className="space-y-4">
-                            <li>
-                                <Link href="#" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">Automatic Lessons</Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">Manual Lessons</Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">Intensive Crash Course</Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">Pass Plus</Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">Refresher Lessons</Link>
-                            </li>
+                            {courses.map((course) => (
+                                <li key={course.slug}>
+                                    <Link
+                                        href={`/services/${course.slug}`}
+                                        className="text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                                    >
+                                        {course.title}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
