@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { FaCar, FaGears, FaGaugeHigh, FaAward, FaCircleCheck, FaArrowRight, FaPhone, FaWhatsapp } from "react-icons/fa6";
 import { courses } from "@/data/courses";
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
     description: "Explore our driving services including automatic, manual, intensive lessons and Pass Plus certification.",
 };
 
-const iconMap: Record<string, JSX.Element> = {
+const iconMap: Record<string, ReactNode> = {
     automatic: <FaCar className="text-3xl" />,
     manual: <FaGears className="text-3xl" />,
     intensive: <FaGaugeHigh className="text-3xl" />,

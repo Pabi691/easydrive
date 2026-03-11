@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Settings, Gamepad2, Zap, ShieldCheck, ArrowRight } from "lucide-react";
@@ -20,7 +21,7 @@ const itemVariants: Variants = {
 };
 
 export default function Courses() {
-    const iconMap: Record<string, JSX.Element> = {
+    const iconMap: Record<string, ReactNode> = {
         automatic: <Gamepad2 size={24} className="text-blue-500" />,
         manual: <Settings size={24} className="text-slate-700" />,
         intensive: <Zap size={24} className="text-purple-500" />,
