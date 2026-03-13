@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 const cities = [
     "London", "Manchester", "Birmingham", "Leeds", "Liverpool", "Bristol", "Brighton"
@@ -11,32 +12,36 @@ const cities = [
 const CityMap = dynamic(() => import("./CityMap"), {
     ssr: false,
     loading: () => (
-        <div className="h-full w-full animate-pulse bg-slate-100" />
+        <div className="h-full w-full animate-pulse bg-slate-100 rounded-2xl" />
     ),
 });
 
 export default function Locations() {
     return (
-        <section id="areas" className="py-28 bg-white relative overflow-hidden">
-            <div className="container mx-auto px-6 md:px-12 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center gap-16">
+        <section id="areas" className="py-24 bg-white relative overflow-hidden">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-blue-50/50 blur-[100px] -z-10" />
 
-                    {/* Content & City Pills */}
+            <div className="container mx-auto px-6 md:px-12">
+                <div className="flex flex-col lg:flex-row items-center gap-14">
+
+                    {/* Content */}
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
+                        initial={{ opacity: 0, x: -24 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true, margin: "-80px" }}
+                        transition={{ duration: 0.5 }}
                         className="lg:w-1/2"
                     >
-                        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.05]">
-                            Driving Lessons <br /> <span className="text-slate-400">Near You</span>
+                        <p className="text-sm font-bold tracking-widest text-accent uppercase mb-4">Coverage Areas</p>
+                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-5 leading-[1.1]">
+                            Lessons{" "}
+                            <span className="text-gradient-cool">Near You</span>
                         </h2>
-                        <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-lg leading-relaxed">
-                            Our DVSA-approved driving instructors cover major cities across the UK. Select your city to find an instructor near you and start your driving journey today.
+                        <p className="text-lg text-slate-500 mb-8 max-w-md leading-relaxed">
+                            Our DVSA-approved instructors cover major cities across the UK. Find an instructor in your area today.
                         </p>
 
-                        <div className="flex flex-wrap gap-4">
+                        <div className="flex flex-wrap gap-2.5 mb-8">
                             {cities.map((city, idx) => (
                                 <motion.button
                                     key={city}
@@ -45,40 +50,36 @@ export default function Locations() {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     viewport={{ once: true }}
-                                    transition={{ duration: 0.4, delay: idx * 0.1 }}
-                                    className="flex items-center gap-2 px-6 py-3 rounded-full border border-slate-200 bg-white/90 text-slate-700 font-semibold hover:bg-slate-900 hover:text-white hover:border-slate-900 shadow-sm transition-colors group"
+                                    transition={{ duration: 0.3, delay: idx * 0.06 }}
+                                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 font-medium text-sm hover:bg-slate-900 hover:text-white hover:border-slate-900 shadow-sm transition-all group"
                                 >
-                                    <MapPin size={18} className="text-slate-400 group-hover:text-white transition-colors" />
+                                    <MapPin size={13} className="text-slate-400 group-hover:text-white transition-colors" />
                                     {city}
                                 </motion.button>
                             ))}
                         </div>
+
+                        <Link
+                            href="/areas"
+                            className="inline-flex items-center gap-2 text-sm font-bold text-accent group"
+                        >
+                            View all areas
+                            <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                        </Link>
                     </motion.div>
 
-                    {/* UK Map Illustration */}
+                    {/* Map */}
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
+                        initial={{ opacity: 0, x: 24 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        viewport={{ once: true, margin: "-80px" }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
                         className="lg:w-1/2 relative flex justify-center"
                     >
-                        <div className="relative w-full max-w-md aspect-square rounded-[3rem] bg-white border border-slate-200 shadow-xl shadow-slate-200/40 overflow-hidden group">
+                        <div className="relative w-full max-w-md aspect-square rounded-2xl bg-white border border-slate-200 shadow-xl shadow-slate-200/40 overflow-hidden">
                             <CityMap />
-
-                            <div className="absolute bottom-4 left-4 right-4 z-10 rounded-2xl bg-white/90 backdrop-blur-md border border-white p-3 shadow-md">
-                                <div className="grid grid-cols-2 gap-x-3 gap-y-1 text-xs font-semibold text-slate-700">
-                                    {cities.map((city) => (
-                                        <div key={city} className="flex items-center gap-1.5">
-                                            <span className="h-2 w-2 rounded-full bg-red-500" />
-                                            {city}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
                         </div>
                     </motion.div>
-
                 </div>
             </div>
         </section>

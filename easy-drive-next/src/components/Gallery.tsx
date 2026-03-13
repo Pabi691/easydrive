@@ -2,67 +2,51 @@
 
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, FreeMode } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/free-mode';
 
 const galleryImages = [
-    {
-        src: "/images/hero_driving.png",
-        alt: "Learner driving on a country road"
-    },
-    {
-        src: "/images/hero.png",
-        alt: "Instructor demonstrating driving techniques"
-    },
-    {
-        src: "/images/success.png",
-        alt: "Student holding pass certificate"
-    },
-    {
-        src: "/images/isometric_3d.png",
-        alt: "View from inside the car during a lesson"
-    },
-    {
-        src: "/images/hero_driving.png",
-        alt: "Driving instructor handing over car keys"
-    }
+    { src: "/images/hero_driving.png", alt: "Learner driving on a country road", label: "Behind the Wheel" },
+    { src: "/images/hero.png", alt: "Instructor demonstrating techniques", label: "Expert Instruction" },
+    { src: "/images/success.png", alt: "Student holding pass certificate", label: "Test Day Success" },
+    { src: "/images/isometric_3d.png", alt: "Premium interior car view", label: "Premium Vehicles" },
+    { src: "/images/hero_driving.png", alt: "Practice on real roads", label: "Real Road Practice" },
 ];
 
 export default function Gallery() {
     return (
-        <section className="py-28 bg-gradient-to-b from-white via-orange-50/55 to-white overflow-hidden relative">
-            <div className="absolute inset-x-0 top-10 mx-auto h-40 w-[70%] rounded-full bg-orange-50/70 blur-3xl -z-10" />
+        <section className="py-24 bg-gradient-to-b from-slate-50/80 to-white overflow-hidden">
             <div className="container mx-auto px-6 md:px-12 mb-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.5 }}
                     className="flex flex-col md:flex-row md:items-end justify-between gap-6"
                 >
                     <div>
-                        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-4 leading-[1.05]">
-                            Life Behind <br /> <span className="text-slate-400">The Wheel</span>
+                        <p className="text-sm font-bold tracking-widest text-accent uppercase mb-4">Gallery</p>
+                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+                            Life Behind{" "}
+                            <span className="text-gradient-cool">The Wheel</span>
                         </h2>
                     </div>
-                    <p className="text-lg md:text-xl text-slate-600 max-w-md pb-2">
-                        Get a glimpse into our modern tuition vehicles, high-quality lessons, and the joy of passing.
+                    <p className="text-lg text-slate-500 max-w-sm pb-1">
+                        From lesson one to the big pass — see the Easy-Drive experience.
                     </p>
                 </motion.div>
             </div>
 
-            <div className="w-full relative">
+            <div className="w-full">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 0.8 }}
                 >
                     <Swiper
-                        slidesPerView={1.2}
-                        spaceBetween={20}
-                        freeMode={true}
+                        slidesPerView={1.3}
+                        spaceBetween={16}
                         loop={true}
                         autoplay={{
                             delay: 3000,
@@ -70,23 +54,26 @@ export default function Gallery() {
                             pauseOnMouseEnter: true
                         }}
                         breakpoints={{
-                            640: { slidesPerView: 2.2, spaceBetween: 24 },
-                            1024: { slidesPerView: 3.2, spaceBetween: 32 },
-                            1440: { slidesPerView: 4.2, spaceBetween: 40 },
+                            640: { slidesPerView: 2.3, spaceBetween: 20 },
+                            1024: { slidesPerView: 3.3, spaceBetween: 24 },
+                            1440: { slidesPerView: 4.3, spaceBetween: 28 },
                         }}
-                        modules={[FreeMode, Autoplay]}
-                        className="px-6 md:px-12 !pb-12"
+                        modules={[Autoplay]}
+                        className="px-6 md:px-12"
                     >
                         {galleryImages.map((image, idx) => (
-                            <SwiperSlide key={idx} className="h-full">
-                                <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden group shadow-md shadow-slate-200/50">
+                            <SwiperSlide key={idx}>
+                                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow-md shadow-slate-200/50 border border-slate-100">
                                     <img
                                         src={image.src}
                                         alt={image.alt}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         loading="lazy"
                                     />
-                                    <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500" />
+                                    {/* Hover overlay with label */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
+                                        <p className="text-white font-bold text-sm">{image.label}</p>
+                                    </div>
                                 </div>
                             </SwiperSlide>
                         ))}
