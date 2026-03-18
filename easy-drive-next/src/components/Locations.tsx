@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 
 const cities = [
-    "London", "Manchester", "Birmingham", "Leeds", "Liverpool", "Bristol", "Brighton"
+    "London", "Colnbrook", "Birmingham", "Leeds", "Liverpool", "Bristol", "Brighton"
 ];
 
 const CityMap = dynamic(() => import("./CityMap"), {

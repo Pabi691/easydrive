@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, CircleMarker, Popup } from "react-leaflet";
 
 const cities = [
     { name: "London", lat: 51.5074, lng: -0.1278 },
-    { name: "Manchester", lat: 53.4808, lng: -2.2426 },
+    { name: "Colnbrook", lat: 51.4827, lng: -0.5218 },
     { name: "Birmingham", lat: 52.4862, lng: -1.8904 },
     { name: "Leeds", lat: 53.8008, lng: -1.5491 },
     { name: "Liverpool", lat: 53.4084, lng: -2.9916 },
