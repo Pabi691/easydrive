@@ -14,6 +14,7 @@ export default function Courses() {
     const sectionRef = useRef<HTMLElement>(null);
     const headlineRef = useRef<HTMLDivElement>(null);
     const cardsRef = useRef<HTMLDivElement>(null);
+    const carContainerRef = useRef<HTMLDivElement>(null);
     const carRef = useRef<HTMLDivElement>(null);
 
     const iconMap: Record<string, ReactNode> = {
@@ -84,20 +85,35 @@ export default function Courses() {
 
             // === SCROLL-DRIVEN CAR ANIMATION ===
             // Single timeline controls everything — scroll down = forward, scroll up = backward
-            if (carRef.current) {
+            if (carRef.current && carContainerRef.current) {
                 const carTimeline = gsap.timeline({
                     scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: "top 90%",
-                        end: "top -10%",
-                        scrub: 0.1,          // Ultra-responsive, near-instant
+                        trigger: carContainerRef.current,
+                        start: "top bottom",   // Starts when the top of the car area hits the bottom of the screen
+                        end: "bottom top",     // Ends when the bottom of the car area hits the top of the screen
+                        scrub: 0.5,
+                        invalidateOnRefresh: true,
                     }
                 });
 
                 // 1. Car moves across the full road
-                carTimeline.fromTo(carRef.current,
-                    { x: "-8%" },
-                    { x: "95%", ease: "power1.inOut" },
+                // carTimeline.fromTo(carRef.current,
+                //     { x: "-8%" },
+                //     { x: "95%", ease: "power1.inOut" },
+                //     0
+                // );
+
+                const container = carContainerRef.current;
+                const car = carRef.current;
+
+                const maxX = container.offsetWidth - car.offsetWidth;
+
+                carTimeline.fromTo(car,
+                    { x: 0 },
+                    {
+                        x: maxX,
+                        ease: "power1.inOut"
+                    },
                     0
                 );
 
@@ -168,12 +184,11 @@ export default function Courses() {
 
                 {/* Header */}
                 <div ref={headlineRef} className="text-center max-w-3xl mx-auto mb-16">
-                    <p className="anim-el text-sm font-bold tracking-widest text-accent uppercase mb-4 opacity-0">
+                    <p className="anim-el text-sm font-bold tracking-widest uppercase mb-4 opacity-0">
                         Our Courses
                     </p>
-                    <h2 className="anim-el text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight text-slate-900 mb-5 leading-[1.15] whitespace-nowrap opacity-0">
-                        Driving Packages{" "}
-                        <span className="text-gradient-cool">Tailored For You</span>
+                    <h2 className="anim-el text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight text-accent mb-5 leading-[1.15] whitespace-nowrap opacity-0">
+                        Driving Packages Tailored For You
                     </h2>
                     <p className="anim-el text-lg text-slate-500 leading-relaxed opacity-0">
                         Choose the path to passing your practical driving test — from beginner lessons to intensive fast-track courses.
@@ -265,89 +280,89 @@ export default function Courses() {
                 </div>
 
                 {/* Scroll-Driven Orange Hatchback Animation */}
-                <div className="relative mt-14 h-24 overflow-hidden">
+                <div ref={carContainerRef} className="relative mt-14 h-24 overflow-hidden">
                     {/* Road surface */}
                     <div className="absolute bottom-5 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-slate-300/70 to-transparent" />
                     {/* Road dashes */}
-                    <div className="absolute bottom-[28px] left-0 right-0 h-[2px]" style={{
+                    {/* <div className="absolute bottom-[28px] left-0 right-0 h-[2px]" style={{
                         backgroundImage: "repeating-linear-gradient(90deg, transparent, transparent 20px, #cbd5e1 20px, #cbd5e1 40px)",
                         opacity: 0.35
-                    }} />
+                    }} /> */}
 
                     {/* Orange Hatchback — Easy-Drive Logo Style */}
                     <div ref={carRef} className="absolute bottom-2 left-0" style={{ width: "120px" }}>
                         <svg viewBox="0 0 120 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[120px] h-[48px]">
                             {/* Soft shadow */}
-                            <ellipse cx="60" cy="46" rx="42" ry="2.5" fill="#000" opacity="0.08"/>
+                            <ellipse cx="60" cy="46" rx="42" ry="2.5" fill="#000" opacity="0.08" />
 
                             {/* === BODY — Orange Hatchback === */}
                             {/* Lower body */}
-                            <path d="M12 32H108C111 32 113 30 113 27V24C113 22 111 20 109 20H14C11 20 9 22 9 24V27C9 30 11 32 12 32Z" fill="#FF6B2C"/>
+                            <path d="M12 32H108C111 32 113 30 113 27V24C113 22 111 20 109 20H14C11 20 9 22 9 24V27C9 30 11 32 12 32Z" fill="#FF6B2C" />
                             {/* Upper body / roof — hatchback slope */}
-                            <path d="M38 12H72L82 20H28L38 12Z" fill="#E85D1F"/>
+                            <path d="M38 12H72L82 20H28L38 12Z" fill="#E85D1F" />
                             {/* Rear hatch slope */}
-                            <path d="M28 20L38 12H42L30 20Z" fill="#D4521A"/>
+                            <path d="M28 20L38 12H42L30 20Z" fill="#D4521A" />
                             {/* Front hood slope */}
-                            <path d="M82 20L72 12H76L88 20Z" fill="#D4521A"/>
+                            <path d="M82 20L72 12H76L88 20Z" fill="#D4521A" />
 
                             {/* Windshield — front */}
-                            <path d="M70 13.5H74L84 20H68V13.5Z" fill="#a5d8ff" opacity="0.7"/>
+                            <path d="M70 13.5H74L84 20H68V13.5Z" fill="#a5d8ff" opacity="0.7" />
                             {/* Windshield — rear */}
-                            <path d="M40 13.5H46V20H30L40 13.5Z" fill="#a5d8ff" opacity="0.6"/>
+                            <path d="M40 13.5H46V20H30L40 13.5Z" fill="#a5d8ff" opacity="0.6" />
                             {/* Side windows */}
-                            <rect x="48" y="14" width="9" height="6" rx="1" fill="#a5d8ff" opacity="0.55"/>
-                            <rect x="58" y="14" width="9" height="6" rx="1" fill="#a5d8ff" opacity="0.55"/>
+                            <rect x="48" y="14" width="9" height="6" rx="1" fill="#a5d8ff" opacity="0.55" />
+                            <rect x="58" y="14" width="9" height="6" rx="1" fill="#a5d8ff" opacity="0.55" />
                             {/* Window divider */}
-                            <rect x="57" y="14" width="1" height="6" fill="#E85D1F"/>
+                            <rect x="57" y="14" width="1" height="6" fill="#E85D1F" />
 
                             {/* Front grille */}
-                            <rect x="108" y="23" width="4" height="5" rx="1.5" fill="#333"/>
+                            <rect x="108" y="23" width="4" height="5" rx="1.5" fill="#333" />
                             {/* Headlights */}
-                            <rect x="109" y="22" width="4" height="2.5" rx="1" fill="#fef3c7"/>
-                            <rect x="110" y="22.5" width="2" height="1.5" rx="0.75" fill="#fbbf24"/>
+                            <rect x="109" y="22" width="4" height="2.5" rx="1" fill="#fef3c7" />
+                            <rect x="110" y="22.5" width="2" height="1.5" rx="0.75" fill="#fbbf24" />
                             {/* Taillights */}
-                            <rect x="9" y="22" width="3.5" height="2.5" rx="1" fill="#ef4444"/>
-                            <rect x="9" y="25" width="3.5" height="1.5" rx="0.75" fill="#dc2626" opacity="0.7"/>
+                            <rect x="9" y="22" width="3.5" height="2.5" rx="1" fill="#ef4444" />
+                            <rect x="9" y="25" width="3.5" height="1.5" rx="0.75" fill="#dc2626" opacity="0.7" />
 
                             {/* Number plate area */}
-                            <rect x="100" y="26" width="8" height="3" rx="1" fill="#f1f5f9"/>
+                            <rect x="100" y="26" width="8" height="3" rx="1" fill="#f1f5f9" />
 
                             {/* Body line accent */}
-                            <rect x="16" y="25" width="90" height="0.8" rx="0.4" fill="#D4521A" opacity="0.4"/>
+                            <rect x="16" y="25" width="90" height="0.8" rx="0.4" fill="#D4521A" opacity="0.4" />
 
                             {/* Door handles */}
-                            <rect x="50" y="23" width="4" height="0.8" rx="0.4" fill="#D4521A" opacity="0.6"/>
-                            <rect x="64" y="23" width="4" height="0.8" rx="0.4" fill="#D4521A" opacity="0.6"/>
+                            <rect x="50" y="23" width="4" height="0.8" rx="0.4" fill="#D4521A" opacity="0.6" />
+                            <rect x="64" y="23" width="4" height="0.8" rx="0.4" fill="#D4521A" opacity="0.6" />
 
                             {/* Side mirror */}
-                            <rect x="84" y="18" width="2.5" height="3" rx="1" fill="#E85D1F"/>
+                            <rect x="84" y="18" width="2.5" height="3" rx="1" fill="#E85D1F" />
 
                             {/* === WHEELS === */}
                             {/* Rear wheel */}
-                            <circle cx="30" cy="34" r="6" fill="#1e293b"/>
-                            <circle cx="30" cy="34" r="4.5" fill="#374151"/>
+                            <circle cx="30" cy="34" r="6" fill="#1e293b" />
+                            <circle cx="30" cy="34" r="4.5" fill="#374151" />
                             <g className="car-wheel-spokes" style={{ transformOrigin: "30px 34px" }}>
-                                <line x1="30" y1="30.5" x2="30" y2="37.5" stroke="#9ca3af" strokeWidth="0.8"/>
-                                <line x1="26.5" y1="34" x2="33.5" y2="34" stroke="#9ca3af" strokeWidth="0.8"/>
-                                <line x1="27.5" y1="31.5" x2="32.5" y2="36.5" stroke="#9ca3af" strokeWidth="0.6"/>
-                                <line x1="27.5" y1="36.5" x2="32.5" y2="31.5" stroke="#9ca3af" strokeWidth="0.6"/>
+                                <line x1="30" y1="30.5" x2="30" y2="37.5" stroke="#9ca3af" strokeWidth="0.8" />
+                                <line x1="26.5" y1="34" x2="33.5" y2="34" stroke="#9ca3af" strokeWidth="0.8" />
+                                <line x1="27.5" y1="31.5" x2="32.5" y2="36.5" stroke="#9ca3af" strokeWidth="0.6" />
+                                <line x1="27.5" y1="36.5" x2="32.5" y2="31.5" stroke="#9ca3af" strokeWidth="0.6" />
                             </g>
-                            <circle cx="30" cy="34" r="1.5" fill="#6b7280"/>
+                            <circle cx="30" cy="34" r="1.5" fill="#6b7280" />
 
                             {/* Front wheel */}
-                            <circle cx="90" cy="34" r="6" fill="#1e293b"/>
-                            <circle cx="90" cy="34" r="4.5" fill="#374151"/>
+                            <circle cx="90" cy="34" r="6" fill="#1e293b" />
+                            <circle cx="90" cy="34" r="4.5" fill="#374151" />
                             <g className="car-wheel-spokes" style={{ transformOrigin: "90px 34px" }}>
-                                <line x1="90" y1="30.5" x2="90" y2="37.5" stroke="#9ca3af" strokeWidth="0.8"/>
-                                <line x1="86.5" y1="34" x2="93.5" y2="34" stroke="#9ca3af" strokeWidth="0.8"/>
-                                <line x1="87.5" y1="31.5" x2="92.5" y2="36.5" stroke="#9ca3af" strokeWidth="0.6"/>
-                                <line x1="87.5" y1="36.5" x2="92.5" y2="31.5" stroke="#9ca3af" strokeWidth="0.6"/>
+                                <line x1="90" y1="30.5" x2="90" y2="37.5" stroke="#9ca3af" strokeWidth="0.8" />
+                                <line x1="86.5" y1="34" x2="93.5" y2="34" stroke="#9ca3af" strokeWidth="0.8" />
+                                <line x1="87.5" y1="31.5" x2="92.5" y2="36.5" stroke="#9ca3af" strokeWidth="0.6" />
+                                <line x1="87.5" y1="36.5" x2="92.5" y2="31.5" stroke="#9ca3af" strokeWidth="0.6" />
                             </g>
-                            <circle cx="90" cy="34" r="1.5" fill="#6b7280"/>
+                            <circle cx="90" cy="34" r="1.5" fill="#6b7280" />
 
                             {/* Wheel arches */}
-                            <path d="M20 32C20 26 24 23 30 23C36 23 40 26 40 32" stroke="#E85D1F" strokeWidth="1.5" fill="none"/>
-                            <path d="M80 32C80 26 84 23 90 23C96 23 100 26 100 32" stroke="#E85D1F" strokeWidth="1.5" fill="none"/>
+                            <path d="M20 32C20 26 24 23 30 23C36 23 40 26 40 32" stroke="#E85D1F" strokeWidth="1.5" fill="none" />
+                            <path d="M80 32C80 26 84 23 90 23C96 23 100 26 100 32" stroke="#E85D1F" strokeWidth="1.5" fill="none" />
                         </svg>
 
                         {/* Exhaust smoke puffs */}

@@ -14,8 +14,8 @@ const features = [
         title: "DVSA Approved",
         desc: "All instructors are fully DVSA-approved and DBS-checked for your safety.",
         accent: "#10b981",
-        accentLight: "rgba(16,185,129,0.12)",
-        glowColor: "rgba(16,185,129,0.25)",
+        accentLight: "rgba(16,185,129,0.08)",
+        glowColor: "rgba(16,185,129,0.15)",
         stat: "100%",
         statLabel: "Verified",
     },
@@ -24,8 +24,8 @@ const features = [
         title: "92% Pass Rate",
         desc: "Our structured teaching method gives you a significantly higher first-time pass rate.",
         accent: "#3b82f6",
-        accentLight: "rgba(59,130,246,0.12)",
-        glowColor: "rgba(59,130,246,0.25)",
+        accentLight: "rgba(59,130,246,0.08)",
+        glowColor: "rgba(59,130,246,0.15)",
         stat: "92%",
         statLabel: "First-Time",
     },
@@ -34,8 +34,8 @@ const features = [
         title: "Premium Vehicles",
         desc: "Learn in dual-control, modern vehicles that are comfortable, safe, and well-maintained.",
         accent: "#8b5cf6",
-        accentLight: "rgba(139,92,246,0.12)",
-        glowColor: "rgba(139,92,246,0.25)",
+        accentLight: "rgba(139,92,246,0.08)",
+        glowColor: "rgba(139,92,246,0.15)",
         stat: "2024",
         statLabel: "Fleet Year",
     },
@@ -44,8 +44,8 @@ const features = [
         title: "Fast-Track Tests",
         desc: "We find cancellation test slots to get you on the road months sooner than normal.",
         accent: "#f97316",
-        accentLight: "rgba(249,115,22,0.12)",
-        glowColor: "rgba(249,115,22,0.25)",
+        accentLight: "rgba(249,115,22,0.08)",
+        glowColor: "rgba(249,115,22,0.15)",
         stat: "2x",
         statLabel: "Faster",
     },
@@ -54,8 +54,8 @@ const features = [
         title: "Flexible Payments",
         desc: "Pay per lesson or save with course packages. No hidden fees, ever.",
         accent: "#ec4899",
-        accentLight: "rgba(236,72,153,0.12)",
-        glowColor: "rgba(236,72,153,0.25)",
+        accentLight: "rgba(236,72,153,0.08)",
+        glowColor: "rgba(236,72,153,0.15)",
         stat: "£0",
         statLabel: "Hidden Fees",
     },
@@ -64,8 +64,8 @@ const features = [
         title: "Patient Instructors",
         desc: "Nervous? That's okay. Our instructors are trained to put you completely at ease.",
         accent: "#eab308",
-        accentLight: "rgba(234,179,8,0.12)",
-        glowColor: "rgba(234,179,8,0.25)",
+        accentLight: "rgba(234,179,8,0.08)",
+        glowColor: "rgba(234,179,8,0.15)",
         stat: "5K+",
         statLabel: "Happy Students",
     },
@@ -167,22 +167,6 @@ export default function WhyChooseUs() {
                 }
             });
 
-            // Light streaks animation
-            const streaks = document.querySelectorAll(".light-streak");
-            streaks.forEach((streak, i) => {
-                gsap.fromTo(streak,
-                    { x: "-100%", opacity: 0 },
-                    {
-                        x: "200%", opacity: 0.6,
-                        duration: 3 + i * 0.5,
-                        ease: "power1.inOut",
-                        repeat: -1,
-                        repeatDelay: 2 + i,
-                        delay: i * 1.5,
-                    }
-                );
-            });
-
         }, sectionRef);
 
         return () => ctx.revert();
@@ -193,86 +177,55 @@ export default function WhyChooseUs() {
     const smallCards = features.slice(1);
 
     return (
-        <section ref={sectionRef} className="relative py-28 overflow-hidden">
+        <section ref={sectionRef} className="relative py-28 overflow-hidden"
+            style={{ background: "#ffffff" }}
+        >
 
-            {/* ═══ BACKGROUND ═══ */}
+            {/* ═══ BACKGROUND — Light ═══ */}
+            <div className="absolute inset-0 -z-10 bg-[url('/images/hero_night_city.png')] bg-cover bg-center opacity-15" />
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/95 via-white/85 to-white/95" />
             <div className="absolute inset-0 -z-10">
-                {/* Road image */}
-                <div className="absolute inset-0"
-                    style={{
-                        backgroundImage: "url('/why-choose-bg.png')",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        filter: "blur(3px) brightness(0.35)",
-                    }}
-                />
-                {/* Dark gradient overlay */}
-                <div className="absolute inset-0"
-                    style={{
-                        background: "linear-gradient(180deg, rgba(2,6,23,0.92) 0%, rgba(15,23,42,0.85) 40%, rgba(2,6,23,0.95) 100%)",
-                    }}
-                />
-                {/* Subtle road line patterns */}
-                <div className="absolute inset-0 opacity-[0.03]"
-                    style={{
-                        backgroundImage: `
-                            repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.1) 60px, rgba(255,255,255,0.1) 61px),
-                            repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255,255,255,0.05) 80px, rgba(255,255,255,0.05) 81px)
-                        `,
-                    }}
-                />
-                {/* Animated light streaks */}
-                <div className="absolute top-[20%] left-0 right-0 h-[1px] overflow-hidden">
-                    <div className="light-streak absolute h-full w-32 bg-gradient-to-r from-transparent via-orange-400/40 to-transparent" />
-                </div>
-                <div className="absolute top-[50%] left-0 right-0 h-[1px] overflow-hidden">
-                    <div className="light-streak absolute h-full w-24 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent" />
-                </div>
-                <div className="absolute top-[75%] left-0 right-0 h-[1px] overflow-hidden">
-                    <div className="light-streak absolute h-full w-20 bg-gradient-to-r from-transparent via-emerald-400/25 to-transparent" />
-                </div>
-                {/* Corner accent glows */}
-                <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-orange-500/5 blur-[120px]" />
-                <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-blue-500/5 blur-[100px]" />
+                {/* Soft color washes */}
+                <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-orange-50/50 blur-[120px]" />
+                <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-blue-50/50 blur-[100px]" />
             </div>
 
             <div className="container mx-auto px-6 md:px-12 relative z-10">
 
                 {/* ═══ HEADING ═══ */}
                 <div ref={headingRef} className="text-center max-w-3xl mx-auto mb-20">
-                    <p className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-orange-400 uppercase mb-5 px-4 py-2 rounded-full border border-orange-400/20"
-                        style={{ background: "rgba(249,115,22,0.08)" }}
+                    <p className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase mb-5 px-4 py-2 rounded-full border border-[#FF6B2C]/20"
+                        style={{ background: "rgba(255,107,44,0.06)" }}
                     >
                         <Sparkles size={14} />
                         Why Easy-Drive
                     </p>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.08]">
-                        Everything You Need to{" "}
-                        <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 bg-clip-text text-transparent">
-                            Pass First Time
-                        </span>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-accent mb-6 leading-[1.08]">
+                        Everything You Need to Pass First Time
                     </h2>
-                    <p className="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                    <p className="text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
                         We&apos;ve built the most complete driving school experience — here&apos;s why 5,000+ students chose us.
                     </p>
                 </div>
 
                 {/* ═══ ASYMMETRIC GRID ═══ */}
+                {/* Changing layout to 2 columns: column 1 (1/3 width) and column 2 (2/3 width) */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
 
-                    {/* ── FEATURED CARD (large, spans 5 cols + 2 rows) ── */}
+                    {/* ── FEATURED CARD (Left Column) ── */}
                     <div
                         ref={el => { cardsRef.current[0] = el; }}
                         onMouseMove={(e) => handleMouseMove(e, 0)}
                         onMouseLeave={() => handleMouseLeave(0)}
-                        className="lg:col-span-5 lg:row-span-2 relative group cursor-pointer"
+                        className="lg:col-span-4 relative group cursor-pointer flex"
                         style={{ transformStyle: "preserve-3d" }}
                     >
-                        <div className="relative h-full rounded-3xl p-8 lg:p-10 overflow-hidden border border-white/[0.08] transition-shadow duration-500 group-hover:shadow-2xl"
+                        <div className="relative w-full h-full rounded-3xl p-8 lg:p-10 overflow-hidden border border-slate-100 transition-shadow duration-500 group-hover:shadow-2xl flex flex-col"
                             style={{
-                                background: "linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)",
+                                background: "rgba(255,255,255,0.9)",
                                 backdropFilter: "blur(20px)",
                                 WebkitBackdropFilter: "blur(20px)",
+                                boxShadow: "0 4px 24px -6px rgba(15,23,42,0.08)",
                             }}
                         >
                             {/* Pointer-following glow */}
@@ -282,21 +235,11 @@ export default function WhyChooseUs() {
 
                             {/* Highlight sweep */}
                             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"
-                                style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent)" }}
-                            />
-
-                            {/* Subtle road texture */}
-                            <div className="absolute bottom-0 left-0 right-0 h-28 opacity-[0.03]"
-                                style={{
-                                    backgroundImage: "repeating-linear-gradient(90deg, transparent 0px, transparent 8px, rgba(255,255,255,0.5) 8px, rgba(255,255,255,0.5) 16px)",
-                                    backgroundSize: "24px 3px",
-                                    backgroundRepeat: "repeat-x",
-                                    backgroundPosition: "center bottom 20px",
-                                }}
+                                style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.02), transparent)" }}
                             />
 
                             {/* Badge */}
-                            <div className="inline-flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase mb-6 px-3 py-1.5 rounded-full"
+                            <div className="inline-flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase mb-6 px-3 py-1.5 rounded-full w-fit"
                                 style={{ color: featured.accent, background: featured.accentLight, border: `1px solid ${featured.accent}22` }}
                             >
                                 Featured
@@ -304,24 +247,24 @@ export default function WhyChooseUs() {
 
                             {/* Icon */}
                             <div className="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg"
-                                style={{ background: `linear-gradient(135deg, ${featured.accent}, ${featured.accent}cc)`, boxShadow: `0 8px 32px ${featured.glowColor}` }}
+                                style={{ background: featured.accent, boxShadow: `0 8px 32px ${featured.glowColor}` }}
                             >
                                 {featured.icon}
                             </div>
 
                             {/* Stat */}
-                            <div className="text-5xl lg:text-6xl font-black text-white/10 absolute top-6 right-8 select-none"
+                            <div className="text-5xl lg:text-6xl font-black text-slate-700 absolute top-6 right-8 select-none"
                                 style={{ fontFamily: "'Inter', sans-serif" }}
                             >
                                 {featured.stat}
                             </div>
 
-                            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">{featured.title}</h3>
-                            <p className="text-slate-400 text-base leading-relaxed mb-8 max-w-sm">{featured.desc}</p>
+                            <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3">{featured.title}</h3>
+                            <p className="text-slate-500 text-base leading-relaxed mb-8 max-w-sm">{featured.desc}</p>
 
                             {/* Mini car wireframe illustration */}
                             <div className="mt-auto pt-4">
-                                <svg viewBox="0 0 200 40" className="w-48 opacity-20" fill="none">
+                                <svg viewBox="0 0 200 40" className="w-48 opacity-15" fill="none">
                                     <path d="M20 30h160c3 0 5-2 5-5v-5c0-2-2-4-4-4h-30l-10-10h-60l-14 10H20c-3 0-5 2-5 4v5c0 3 2 5 5 5z"
                                         stroke={featured.accent} strokeWidth="1.5" fill="none" />
                                     <circle cx="55" cy="32" r="6" stroke={featured.accent} strokeWidth="1.5" className="featured-wheel" style={{ transformOrigin: "55px 32px" }} />
@@ -329,81 +272,144 @@ export default function WhyChooseUs() {
                                 </svg>
                             </div>
 
-                            {/* Bottom accent glow */}
-                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px]"
-                                style={{ background: `linear-gradient(90deg, transparent, ${featured.accent}44, transparent)` }}
+                            {/* Bottom accent line */}
+                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px]"
+                                style={{ background: `linear-gradient(90deg, transparent, ${featured.accent}33, transparent)` }}
                             />
                         </div>
                     </div>
 
-                    {/* ── SMALL CARDS (right side + bottom) ── */}
-                    {smallCards.map((feature, idx) => {
-                        const realIdx = idx + 1;
-                        // Layout: first 2 cards span 7 cols across two, next 3 form bottom row
-                        const colClass = idx < 2
-                            ? "lg:col-span-3 lg:col-start-auto"
-                            : idx === 2
-                                ? "lg:col-span-4"
-                                : "lg:col-span-4";
-
-                        return (
-                            <div
-                                key={realIdx}
-                                ref={el => { cardsRef.current[realIdx] = el; }}
-                                onMouseMove={(e) => handleMouseMove(e, realIdx)}
-                                onMouseLeave={() => handleMouseLeave(realIdx)}
-                                className={`${colClass} relative group cursor-pointer`}
-                                style={{ transformStyle: "preserve-3d" }}
-                            >
-                                <div className="relative h-full rounded-2xl p-6 overflow-hidden border border-white/[0.06] transition-all duration-500 group-hover:shadow-xl group-hover:border-white/[0.12]"
-                                    style={{
-                                        background: "linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.015) 100%)",
-                                        backdropFilter: "blur(16px)",
-                                        WebkitBackdropFilter: "blur(16px)",
-                                    }}
-                                >
-                                    {/* Pointer-following glow */}
-                                    <div className="card-glow absolute w-40 h-40 rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 opacity-0"
-                                        style={{ background: `radial-gradient(circle, ${feature.glowColor}, transparent 70%)`, filter: "blur(25px)" }}
-                                    />
-
-                                    {/* Highlight sweep */}
-                                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
-                                        style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent)" }}
-                                    />
-
-                                    {/* Top row: icon + stat */}
-                                    <div className="flex items-start justify-between mb-4">
-                                        <div className="feature-icon w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-lg transition-transform duration-300 group-hover:scale-110"
-                                            style={{ background: `linear-gradient(135deg, ${feature.accent}, ${feature.accent}aa)`, boxShadow: `0 6px 24px ${feature.glowColor}` }}
+                    {/* ── SMALL CARDS CONTAINER (Right Column) ── */}
+                    <div className="lg:col-span-8 flex flex-col gap-5 lg:gap-6">
+                        {/* Top Row: 3 cards */}
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-6">
+                            {smallCards.slice(0, 3).map((feature, i) => {
+                                const realIdx = i + 1;
+                                return (
+                                    <div
+                                        key={realIdx}
+                                        ref={el => { cardsRef.current[realIdx] = el; }}
+                                        onMouseMove={(e) => handleMouseMove(e, realIdx)}
+                                        onMouseLeave={() => handleMouseLeave(realIdx)}
+                                        className="relative group cursor-pointer flex"
+                                        style={{ transformStyle: "preserve-3d" }}
+                                    >
+                                        <div className="relative w-full h-full rounded-2xl p-6 overflow-hidden border border-slate-100 transition-all duration-500 group-hover:shadow-xl group-hover:border-slate-200 flex flex-col"
+                                            style={{
+                                                background: "rgba(255,255,255,0.9)",
+                                                backdropFilter: "blur(16px)",
+                                                WebkitBackdropFilter: "blur(16px)",
+                                                boxShadow: "0 2px 16px -4px rgba(15,23,42,0.06)",
+                                            }}
                                         >
-                                            {feature.icon}
-                                        </div>
-                                        <div className="text-right">
-                                            <div className="text-2xl font-bold text-white/80" style={{ fontFamily: "'Inter', sans-serif" }}>
-                                                {feature.stat}
+                                            {/* Pointer-following glow */}
+                                            <div className="card-glow absolute w-40 h-40 rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 opacity-0"
+                                                style={{ background: `radial-gradient(circle, ${feature.glowColor}, transparent 70%)`, filter: "blur(25px)" }}
+                                            />
+
+                                            {/* Highlight sweep */}
+                                            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
+                                                style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.02), transparent)" }}
+                                            />
+
+                                            {/* Top row: icon + stat */}
+                                            <div className="flex items-start justify-between mb-4">
+                                                <div className="feature-icon w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-lg transition-transform duration-300 group-hover:scale-110"
+                                                    style={{ background: feature.accent, boxShadow: `0 6px 24px ${feature.glowColor}` }}
+                                                >
+                                                    {feature.icon}
+                                                </div>
+                                                <div className="text-right">
+                                                    <div className="text-2xl font-bold text-slate-800" style={{ fontFamily: "'Inter', sans-serif" }}>
+                                                        {feature.stat}
+                                                    </div>
+                                                    <div className="text-[10px] font-semibold tracking-wider uppercase text-slate-400">
+                                                        {feature.statLabel}
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="text-[10px] font-semibold tracking-wider uppercase text-slate-500">
-                                                {feature.statLabel}
-                                            </div>
+
+                                            <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-slate-800 transition-colors">
+                                                {feature.title}
+                                            </h3>
+                                            <p className="text-slate-500 text-sm leading-relaxed">
+                                                {feature.desc}
+                                            </p>
+
+                                            {/* Bottom accent line */}
+                                            <div className="absolute bottom-0 left-0 w-0 h-[2px] group-hover:w-full transition-all duration-700 mt-auto"
+                                                style={{ background: `linear-gradient(90deg, ${feature.accent}, transparent)` }}
+                                            />
                                         </div>
                                     </div>
+                                );
+                            })}
+                        </div>
+                        {/* Bottom Row: 2 cards */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
+                            {smallCards.slice(3, 5).map((feature, i) => {
+                                const realIdx = i + 4;
+                                return (
+                                    <div
+                                        key={realIdx}
+                                        ref={el => { cardsRef.current[realIdx] = el; }}
+                                        onMouseMove={(e) => handleMouseMove(e, realIdx)}
+                                        onMouseLeave={() => handleMouseLeave(realIdx)}
+                                        className="relative group cursor-pointer flex"
+                                        style={{ transformStyle: "preserve-3d" }}
+                                    >
+                                        <div className="relative w-full h-full rounded-2xl p-6 overflow-hidden border border-slate-100 transition-all duration-500 group-hover:shadow-xl group-hover:border-slate-200 flex flex-col"
+                                            style={{
+                                                background: "rgba(255,255,255,0.9)",
+                                                backdropFilter: "blur(16px)",
+                                                WebkitBackdropFilter: "blur(16px)",
+                                                boxShadow: "0 2px 16px -4px rgba(15,23,42,0.06)",
+                                            }}
+                                        >
+                                            {/* Pointer-following glow */}
+                                            <div className="card-glow absolute w-40 h-40 rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 opacity-0"
+                                                style={{ background: `radial-gradient(circle, ${feature.glowColor}, transparent 70%)`, filter: "blur(25px)" }}
+                                            />
 
-                                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-white/90 transition-colors">
-                                        {feature.title}
-                                    </h3>
-                                    <p className="text-slate-400 text-sm leading-relaxed">
-                                        {feature.desc}
-                                    </p>
+                                            {/* Highlight sweep */}
+                                            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
+                                                style={{ background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.02), transparent)" }}
+                                            />
 
-                                    {/* Bottom accent line */}
-                                    <div className="absolute bottom-0 left-0 w-0 h-[2px] group-hover:w-full transition-all duration-700"
-                                        style={{ background: `linear-gradient(90deg, ${feature.accent}, transparent)` }}
-                                    />
-                                </div>
-                            </div>
-                        );
-                    })}
+                                            {/* Top row: icon + stat */}
+                                            <div className="flex items-start justify-between mb-4">
+                                                <div className="feature-icon w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-lg transition-transform duration-300 group-hover:scale-110"
+                                                    style={{ background: feature.accent, boxShadow: `0 6px 24px ${feature.glowColor}` }}
+                                                >
+                                                    {feature.icon}
+                                                </div>
+                                                <div className="text-right">
+                                                    <div className="text-2xl font-bold text-slate-800" style={{ fontFamily: "'Inter', sans-serif" }}>
+                                                        {feature.stat}
+                                                    </div>
+                                                    <div className="text-[10px] font-semibold tracking-wider uppercase text-slate-400">
+                                                        {feature.statLabel}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-slate-800 transition-colors">
+                                                {feature.title}
+                                            </h3>
+                                            <p className="text-slate-500 text-sm leading-relaxed mb-4 flex-grow">
+                                                {feature.desc}
+                                            </p>
+
+                                            {/* Bottom accent line */}
+                                            <div className="absolute bottom-0 left-0 w-0 h-[2px] group-hover:w-full transition-all duration-700 mt-auto"
+                                                style={{ background: `linear-gradient(90deg, ${feature.accent}, transparent)` }}
+                                            />
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

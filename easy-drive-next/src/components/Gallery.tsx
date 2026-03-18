@@ -1,8 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import { X } from "lucide-react";
+import { useState } from "react";
 import 'swiper/css';
 
 const galleryImages = [
@@ -14,6 +16,8 @@ const galleryImages = [
 ];
 
 export default function Gallery() {
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
     return (
         <section className="py-24 bg-gradient-to-b from-slate-50/80 to-white overflow-hidden">
             <div className="container mx-auto px-6 md:px-12 mb-12">
@@ -25,10 +29,9 @@ export default function Gallery() {
                     className="flex flex-col md:flex-row md:items-end justify-between gap-6"
                 >
                     <div>
-                        <p className="text-sm font-bold tracking-widest text-accent uppercase mb-4">Gallery</p>
-                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
-                            Life Behind{" "}
-                            <span className="text-gradient-cool">The Wheel</span>
+                        <p className="text-sm font-bold tracking-widest uppercase mb-4">Gallery</p>
+                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-accent mb-5 leading-[1.1]">
+                            Life Behind The Wheel
                         </h2>
                     </div>
                     <p className="text-lg text-slate-500 max-w-sm pb-1">
@@ -63,7 +66,10 @@ export default function Gallery() {
                     >
                         {galleryImages.map((image, idx) => (
                             <SwiperSlide key={idx}>
-                                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow-md shadow-slate-200/50 border border-slate-100">
+                                <div
+                                    className="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow-md shadow-slate-200/50 border border-slate-100 cursor-pointer"
+                                    onClick={() => setSelectedImage(image.src)}
+                                >
                                     <img
                                         src={image.src}
                                         alt={image.alt}
@@ -80,6 +86,36 @@ export default function Gallery() {
                     </Swiper>
                 </motion.div>
             </div>
+
+            {/* Lightbox / Full screen image viewer */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedImage(null)}
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out"
+                    >
+                        <button
+                            className="absolute top-6 right-6 text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
+                            onClick={() => setSelectedImage(null)}
+                        >
+                            <X size={24} />
+                        </button>
+                        <motion.img
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            src={selectedImage}
+                            alt="Gallery preview"
+                            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }

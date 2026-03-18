@@ -23,13 +23,13 @@ export default function Home() {
       <Hero />
       <TrustBanner />
       <Courses />
-      <RoadDivider />
+      {/* <RoadDivider /> */}
       <WhyChooseUs />
       <Stats />
       <HowItWorks />
-      <RoadDivider />
+      {/* <RoadDivider /> */}
       <Locations />
-      <RoadDivider />
+      {/* <RoadDivider /> */}
       <Reviews />
       <Gallery />
       <FAQ />

@@ -42,14 +42,14 @@ const reviews = [
 
 export default function Reviews() {
     return (
-        <section id="reviews" className="py-24 bg-gradient-to-b from-orange-50/40 to-white overflow-hidden relative">
+        <section id="reviews" className="py-24 overflow-hidden relative">
             <div className="container mx-auto px-6 md:px-12">
                 <div className="text-center max-w-2xl mx-auto mb-16">
                     <motion.p
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="text-sm font-bold tracking-widest text-accent uppercase mb-4"
+                        className="text-sm font-bold tracking-widest uppercase mb-4"
                     >
                         Testimonials
                     </motion.p>
@@ -58,10 +58,9 @@ export default function Reviews() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-80px" }}
                         transition={{ duration: 0.5 }}
-                        className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-5 leading-[1.1]"
+                        className="text-4xl md:text-5xl font-extrabold tracking-tight text-accent mb-5 leading-[1.1]"
                     >
-                        Thousands of{" "}
-                        <span className="text-gradient-cool">Happy Drivers</span>
+                        Thousands of Happy Drivers
                     </motion.h2>
                     <motion.div
                         initial={{ opacity: 0 }}

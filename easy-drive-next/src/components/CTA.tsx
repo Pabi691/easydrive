@@ -6,7 +6,9 @@ import { ArrowRight, PhoneCall, MessageCircle, CheckCircle } from "lucide-react"
 
 export default function CTA() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section className="py-24 relative overflow-hidden"
+            style={{ background: "linear-gradient(180deg, #f8fafc 0%, #f0f4f8 50%, #f8fafc 100%)" }}
+        >
             <div className="container mx-auto px-6 md:px-12">
                 <motion.div
                     initial={{ opacity: 0, y: 32 }}
@@ -31,10 +33,9 @@ export default function CTA() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.15, duration: 0.5 }}
-                                className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-5 leading-[1.1]"
+                                className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#FF6B2C] mb-5 leading-[1.1]"
                             >
-                                Ready to Start{" "}
-                                <span className="text-gradient-accent">Driving?</span>
+                                Ready to Start Driving?
                             </motion.h2>
 
                             <motion.p

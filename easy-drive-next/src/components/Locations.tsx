@@ -18,7 +18,9 @@ const CityMap = dynamic(() => import("./CityMap"), {
 
 export default function Locations() {
     return (
-        <section id="areas" className="py-24 bg-white relative overflow-hidden">
+        <section id="areas" className="py-24 relative overflow-hidden"
+            style={{ background: "linear-gradient(180deg, #fffcfa 0%, #fff7f2 50%, #fffcfa 100%)" }}
+        >
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-blue-50/50 blur-[100px] -z-10" />
 
             <div className="container mx-auto px-6 md:px-12">
@@ -32,10 +34,9 @@ export default function Locations() {
                         transition={{ duration: 0.5 }}
                         className="lg:w-1/2"
                     >
-                        <p className="text-sm font-bold tracking-widest text-accent uppercase mb-4">Coverage Areas</p>
-                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-5 leading-[1.1]">
-                            Lessons{" "}
-                            <span className="text-gradient-cool">Near You</span>
+                        <p className="text-sm font-bold tracking-widest uppercase mb-4">Coverage Areas</p>
+                        <h2 className="text-4xl md:text-5xl text-accent font-extrabold tracking-tight mb-5 leading-[1.1]">
+                            Lessons Near You
                         </h2>
                         <p className="text-lg text-slate-500 mb-8 max-w-md leading-relaxed">
                             Our DVSA-approved instructors cover major cities across the UK. Find an instructor in your area today.

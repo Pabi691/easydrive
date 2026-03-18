@@ -41,11 +41,10 @@ function FAQItem({ faq, idx, isOpen, toggle }: { faq: typeof faqs[0]; idx: numbe
         >
             <button
                 onClick={toggle}
-                className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 ${
-                    isOpen
-                        ? "bg-accent/5 border-accent/20 shadow-md shadow-accent/5"
-                        : "bg-white border-slate-100 hover:bg-slate-50 hover:border-slate-200 shadow-[0_2px_12px_-4px_rgba(15,23,42,0.06)]"
-                }`}
+                className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 ${isOpen
+                    ? "bg-accent/5 border-accent/20 shadow-md shadow-accent/5"
+                    : "bg-white border-slate-100 hover:bg-slate-50 hover:border-slate-200 shadow-[0_2px_12px_-4px_rgba(15,23,42,0.06)]"
+                    }`}
             >
                 <div className="flex items-center justify-between gap-4">
                     <h3 className={`font-bold text-[15px] leading-snug ${isOpen ? "text-accent" : "text-slate-900"}`}>
@@ -53,9 +52,8 @@ function FAQItem({ faq, idx, isOpen, toggle }: { faq: typeof faqs[0]; idx: numbe
                     </h3>
                     <ChevronDown
                         size={18}
-                        className={`shrink-0 transition-transform duration-300 ${
-                            isOpen ? "rotate-180 text-accent" : "text-slate-400"
-                        }`}
+                        className={`shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-accent" : "text-slate-400"
+                            }`}
                     />
                 </div>
                 <AnimatePresence>
@@ -102,10 +100,9 @@ export default function FAQ() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-80px" }}
                             transition={{ duration: 0.5 }}
-                            className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-5 leading-[1.1]"
+                            className="text-4xl md:text-5xl font-extrabold tracking-tight text-accent mb-5 leading-[1.1]"
                         >
-                            Frequently Asked{" "}
-                            <span className="text-gradient-cool">Questions</span>
+                            Frequently Asked Questions
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 16 }}

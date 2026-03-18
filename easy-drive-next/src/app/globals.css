@@ -121,10 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @utility text-gradient-cool {
-  background: linear-gradient(135deg, #FF6B2C 0%, #3B82F6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #3B82F6;
 }
 
 /* ─── Section backgrounds ─── */

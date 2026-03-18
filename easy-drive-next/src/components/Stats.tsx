@@ -4,10 +4,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const stats = [
-    { value: 5000, suffix: "+", label: "Happy Students", color: "text-accent" },
-    { value: 92, suffix: "%", label: "First-Time Pass Rate", color: "text-emerald-500" },
+    { value: 5000, suffix: "+", label: "Happy Students", color: "text-[#FF6B2C]" },
+    { value: 92, suffix: "%", label: "First-Time Pass Rate", color: "text-emerald-600" },
     { value: 4.9, suffix: "★", label: "Google Rating", color: "text-amber-500", decimals: 1 },
-    { value: 15, suffix: "+", label: "Years Experience", color: "text-blue-500" },
+    { value: 15, suffix: "+", label: "Years Experience", color: "text-[#3B82F6]" },
 ];
 
 function AnimatedCounter({ value, suffix, decimals = 0 }: { value: number; suffix: string; decimals?: number }) {
@@ -39,17 +39,18 @@ function AnimatedCounter({ value, suffix, decimals = 0 }: { value: number; suffi
 
 export default function Stats() {
     return (
-        <section className="py-16 relative overflow-hidden">
-            {/* Vibrant gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 -z-10" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(255,107,44,0.15)_0%,_transparent_50%)] -z-10" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(59,130,246,0.12)_0%,_transparent_50%)] -z-10" />
+        <section className="py-16 relative overflow-hidden"
+            style={{ background: "linear-gradient(180deg, #f0f4f8 0%, #e8edf4 50%, #f0f4f8 100%)" }}
+        >
+            {/* Subtle accent washes */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(255,107,44,0.06)_0%,_transparent_50%)] -z-0" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(59,130,246,0.06)_0%,_transparent_50%)] -z-0" />
 
-            {/* Accent lines */}
-            <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
-            <div className="absolute bottom-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+            {/* Top/bottom lines */}
+            <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-slate-300/50 to-transparent" />
+            <div className="absolute bottom-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-slate-300/50 to-transparent" />
 
-            <div className="container mx-auto px-6 md:px-12">
+            <div className="container mx-auto px-6 md:px-12 relative z-10">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
                     {stats.map((stat, idx) => (
                         <motion.div
@@ -63,7 +64,7 @@ export default function Stats() {
                             <div className={`text-4xl md:text-5xl font-extrabold ${stat.color} mb-2 font-[family-name:var(--font-heading)] tracking-tight`}>
                                 <AnimatedCounter value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
                             </div>
-                            <p className="text-sm text-slate-400 font-medium tracking-wide uppercase">{stat.label}</p>
+                            <p className="text-sm text-slate-500 font-medium tracking-wide uppercase">{stat.label}</p>
                         </motion.div>
                     ))}
                 </div>

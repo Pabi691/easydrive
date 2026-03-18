@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
 import { MousePointerClick, CalendarCheck, Flag, ArrowRight } from "lucide-react";
 
 const steps = [
@@ -28,6 +29,12 @@ const steps = [
 ];
 
 export default function HowItWorks() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start 80%", "end 40%"]
+    });
+
     return (
         <section className="py-24 bg-gradient-to-b from-slate-50/80 to-white relative overflow-hidden">
             <div className="container mx-auto px-6 md:px-12">
@@ -36,7 +43,7 @@ export default function HowItWorks() {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="text-sm font-bold tracking-widest text-accent uppercase mb-4"
+                        className="text-sm font-bold tracking-widest uppercase mb-4"
                     >
                         How It Works
                     </motion.p>
@@ -45,10 +52,9 @@ export default function HowItWorks() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-80px" }}
                         transition={{ duration: 0.5 }}
-                        className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-5 leading-[1.1]"
+                        className="text-4xl md:text-5xl font-extrabold tracking-tight text-accent mb-5 leading-[1.1]"
                     >
-                        Three Steps to Your{" "}
-                        <span className="text-gradient-cool">Licence</span>
+                        Three Steps to Your Licence
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 16 }}
@@ -61,15 +67,12 @@ export default function HowItWorks() {
                     </motion.p>
                 </div>
 
-                <div className="max-w-4xl mx-auto">
+                <div ref={containerRef} className="max-w-4xl mx-auto">
                     <div className="grid md:grid-cols-3 gap-6 relative">
                         {/* Connecting line (desktop) */}
                         <div className="hidden md:block absolute top-20 left-[18%] right-[18%] h-[2px] bg-slate-100 z-0">
                             <motion.div
-                                initial={{ scaleX: 0 }}
-                                whileInView={{ scaleX: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1.2, ease: "easeInOut", delay: 0.3 }}
+                                style={{ scaleX: scrollYProgress }}
                                 className="h-full bg-gradient-to-r from-accent via-blue-400 to-emerald-400 origin-left"
                             />
                         </div>
@@ -87,9 +90,6 @@ export default function HowItWorks() {
                                 <div className="mx-auto mb-6 relative">
                                     <div className={`w-16 h-16 ${step.color} border rounded-2xl flex items-center justify-center mx-auto shadow-sm`}>
                                         {step.icon}
-                                    </div>
-                                    <div className="absolute -top-2 -right-2 w-7 h-7 bg-gradient-to-br from-accent to-orange-500 text-white rounded-lg flex items-center justify-center text-[11px] font-bold shadow-lg shadow-accent/25">
-                                        {step.num}
                                     </div>
                                 </div>
 
