@@ -37,11 +37,12 @@ export default function Navbar() {
 
     return (
         <header
-            className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-                scrolled
+            className={`fixed top-0 w-full z-[999] transition-all duration-500 ${
+                scrolled && !isOpen
                     ? "py-2 bg-white/85 backdrop-blur-2xl border-b border-slate-100/80 shadow-[0_4px_30px_rgba(15,23,42,0.06)]"
                     : "py-4 bg-transparent"
             }`}
+            style={{ isolation: "isolate" }}
         >
             <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
                 {/* Logo */}
@@ -120,7 +121,8 @@ export default function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 top-0 bg-white/95 backdrop-blur-2xl flex flex-col z-50 lg:hidden"
+                        className="fixed inset-0 top-0 bg-white/98 backdrop-blur-3xl flex flex-col z-[1000] lg:hidden"
+                        style={{ isolation: "isolate" }}
                     >
                         <div className="flex justify-between items-center px-6 py-4">
                             <Link href="/" onClick={() => setIsOpen(false)}>

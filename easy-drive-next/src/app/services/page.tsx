@@ -24,10 +24,10 @@ export default function ServicesPage() {
 
             <section className="container mx-auto px-6 md:px-12">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="text-brand-orange font-bold text-sm tracking-wider uppercase mb-4 block">
+                    <span className="font-bold text-sm tracking-wider uppercase mb-4 block">
                         What We Offer
                     </span>
-                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.05]">
+                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-accent mb-6 leading-[1.05]">
                         Driving Services Built For Every Learner
                     </h1>
                     <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
@@ -89,7 +89,7 @@ export default function ServicesPage() {
 
             <section className="py-20 bg-gradient-to-b from-blue-50/50 via-white to-orange-50/40">
                 <div className="container mx-auto px-6 md:px-12 text-center">
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-14">
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-accent mb-14">
                         How Our Process Works
                     </h2>
                     <div className="grid md:grid-cols-3 gap-8">
@@ -112,30 +112,29 @@ export default function ServicesPage() {
 
             <section className="py-16">
                 <div className="max-w-4xl mx-auto px-6 md:px-12">
-                    <div className="bg-gradient-to-r from-slate-900 to-slate-700 rounded-3xl p-10 md:p-14 text-center text-white">
-                        <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Ready to Start Your Engines?</h2>
-                        <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto">Don&apos;t wait months to hit the road. Secure your dates today and join thousands of successful Easy-Drive students.</p>
+                    <div className="bg-orange-50/50 border border-orange-100 rounded-3xl p-10 md:p-14 text-center text-slate-900 shadow-sm">
+                        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-accent">Ready to Start Your Engines?</h2>
+                        <p className="text-lg text-slate-600 mb-8 max-w-xl mx-auto">Don&apos;t wait months to hit the road. Secure your dates today and join thousands of successful Easy-Drive students.</p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <Link href="/contact" className="bg-white text-slate-900 px-8 py-3.5 rounded-full font-bold hover:shadow-xl transition-all">
+                            <Link href="/contact" className="bg-accent text-white px-8 py-3.5 rounded-full font-bold hover:shadow-xl transition-all">
                                 Contact Us
                             </Link>
-                            <a href="tel:07777777777" className="bg-gray-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-gray-800 transition-all flex items-center gap-2">
-                                <FaPhone /> 07777777777
+                            <a href="tel:07777777777" className="bg-white text-slate-800 border border-slate-200 px-8 py-3.5 rounded-full font-bold hover:bg-slate-50 transition-all flex items-center gap-2 shadow-sm">
+                                <FaPhone className="text-accent" /> 07777777777
                             </a>
-                            <a href="https://wa.me/447777777777" className="bg-green-600 text-white px-8 py-3.5 rounded-full font-bold hover:bg-green-700 transition-all flex items-center gap-2">
-                                <FaWhatsapp /> WhatsApp
+                            <a href="https://wa.me/447777777777" className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-8 py-3.5 rounded-full font-bold hover:bg-emerald-100 transition-all flex items-center gap-2">
+                                <FaWhatsapp size={18} /> WhatsApp
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="py-20 bg-[url('/images/hero_driving.png')] bg-cover bg-center relative">
-                <div className="absolute inset-0 bg-slate-900/70" />
+            <section className="py-20 bg-slate-50 relative">
                 <div className="relative max-w-5xl mx-auto px-6 md:px-12">
-                    <div className="text-center mb-12 text-white">
-                        <h2 className="text-3xl md:text-4xl font-extrabold mb-3">Common Questions Before You Book</h2>
-                        <p className="text-slate-200">Short answers to the most common learner questions.</p>
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-accent">Common Questions Before You Book</h2>
+                        <p className="text-slate-500">Short answers to the most common learner questions.</p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
                         {[
@@ -144,9 +143,9 @@ export default function ServicesPage() {
                             ["Do you help with test booking?", "Yes. Intensive learners get fast-track booking support and cancellation monitoring."],
                             ["Do you offer weekend lessons?", "Yes. We run weekday evenings and weekend slots across major service areas."],
                         ].map(([q, a]) => (
-                            <div key={q} className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-md">
-                                <h3 className="text-lg font-bold text-white mb-2">{q}</h3>
-                                <p className="text-slate-200 text-sm">{a}</p>
+                            <div key={q} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_2px_10px_-4px_rgba(15,23,42,0.06)]">
+                                <h3 className="text-lg font-bold text-slate-900 mb-2">{q}</h3>
+                                <p className="text-slate-600 text-sm leading-relaxed">{a}</p>
                             </div>
                         ))}
                     </div>

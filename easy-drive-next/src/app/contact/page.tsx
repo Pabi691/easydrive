@@ -14,8 +14,8 @@ export default function ContactPage() {
                     transition={{ duration: 0.6 }}
                     className="text-center max-w-3xl mx-auto mb-16"
                 >
-                    <span className="text-brand-orange font-bold text-sm tracking-wider uppercase mb-4 block">Contact Us</span>
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
+                    <span className="font-bold text-sm tracking-wider uppercase mb-4 block">Contact Us</span>
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-accent mb-6">
                         Get In Touch
                     </h1>
                     <p className="text-lg text-slate-500 leading-relaxed">
@@ -31,13 +31,13 @@ export default function ContactPage() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="lg:col-span-1 space-y-8"
                     >
-                        <div className="glass-card bg-white p-8 group hover:border-brand-orange transition-colors duration-300">
-                            <div className="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center text-brand-orange mb-6 group-hover:bg-brand-orange group-hover:text-white transition-colors duration-300">
+                        <div className="glass-card bg-white p-8 group hover:border-accent transition-colors duration-300">
+                            <div className="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                                 <Phone size={24} />
                             </div>
                             <h3 className="text-xl font-bold text-slate-900 mb-2">Call Us</h3>
                             <p className="text-slate-500 mb-4 text-sm">Mon-Fri from 8am to 8pm.</p>
-                            <a href="tel:+448001234567" className="text-lg font-bold text-brand-orange hover:underline">0800 123 4567</a>
+                            <a href="tel:+448001234567" className="text-lg font-bold text-accent hover:underline">0800 123 4567</a>
                         </div>
 
                         <div className="glass-card bg-white p-8 group hover:border-brand-blue transition-colors duration-300">
@@ -58,8 +58,8 @@ export default function ContactPage() {
                             <a href="https://wa.me/447777777777" className="text-lg font-bold text-green-600 hover:underline">Chat on WhatsApp</a>
                         </div>
 
-                        <div className="glass-card bg-white p-8 group hover:border-brand-orange transition-colors duration-300">
-                            <div className="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center text-brand-orange mb-6 group-hover:bg-brand-orange group-hover:text-white transition-colors duration-300">
+                        <div className="glass-card bg-white p-8 group hover:border-accent transition-colors duration-300">
+                            <div className="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                                 <MapPin size={24} />
                             </div>
                             <h3 className="text-xl font-bold text-slate-900 mb-2">Head Office</h3>
@@ -83,28 +83,28 @@ export default function ContactPage() {
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">First Name</label>
-                                    <input type="text" id="firstName" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange transition-all bg-slate-50" placeholder="John" />
+                                    <input type="text" id="firstName" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all bg-slate-50" placeholder="John" />
                                 </div>
                                 <div>
                                     <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-2">Last Name</label>
-                                    <input type="text" id="lastName" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange transition-all bg-slate-50" placeholder="Doe" />
+                                    <input type="text" id="lastName" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all bg-slate-50" placeholder="Doe" />
                                 </div>
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                                    <input type="email" id="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange transition-all bg-slate-50" placeholder="john@example.com" />
+                                    <input type="email" id="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all bg-slate-50" placeholder="john@example.com" />
                                 </div>
                                 <div>
                                     <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
-                                    <input type="tel" id="phone" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange transition-all bg-slate-50" placeholder="07700 900000" />
+                                    <input type="tel" id="phone" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all bg-slate-50" placeholder="07700 900000" />
                                 </div>
                             </div>
 
                             <div>
                                 <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">Enquiry Type</label>
-                                <select id="subject" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange transition-all bg-slate-50 text-slate-700">
+                                <select id="subject" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all bg-slate-50 text-slate-700">
                                     <option>Booking an intensive course</option>
                                     <option>Weekly driving lessons</option>
                                     <option>Instructor enquiry</option>
@@ -114,10 +114,10 @@ export default function ContactPage() {
 
                             <div>
                                 <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                                <textarea id="message" rows={5} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange transition-all bg-slate-50 resize-none" placeholder="How can we help you?"></textarea>
+                                <textarea id="message" rows={5} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all bg-slate-50 resize-none" placeholder="How can we help you?"></textarea>
                             </div>
 
-                            <button type="submit" className="w-full bg-brand-orange text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-orange-600 transition-all shadow-lg shadow-brand-orange/20 flex items-center justify-center gap-2 active:scale-95">
+                            <button type="submit" className="w-full bg-accent text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-[#E05D23] transition-all shadow-lg shadow-accent/20 flex items-center justify-center gap-2 active:scale-95">
                                 Send Message
                                 <Send size={18} />
                             </button>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                 </div>
 
                 <section className="max-w-6xl mx-auto mt-16 rounded-[2rem] bg-white border border-slate-200 p-10 md:p-12">
-                    <h2 className="text-3xl font-extrabold text-slate-900 mb-8 text-center">Quick Answers</h2>
+                    <h2 className="text-3xl font-extrabold text-accent mb-8 text-center">Quick Answers</h2>
                     <div className="grid md:grid-cols-3 gap-6">
                         {[
                             ["How soon can I start?", "Usually within 3-7 days depending on area and lesson type."],

@@ -83,8 +83,8 @@ export default function ReviewsPage() {
                     transition={{ duration: 0.6 }}
                     className="text-center max-w-3xl mx-auto mb-10"
                 >
-                    <span className="text-brand-orange font-bold text-sm tracking-wider uppercase mb-4 block">Success Stories</span>
-                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.05]">
+                    <span className="font-bold text-sm tracking-wider uppercase mb-4 block">Success Stories</span>
+                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-accent mb-6 leading-[1.05]">
                         Hear From Our Drivers
                     </h1>
                     <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-6">
@@ -98,7 +98,7 @@ export default function ReviewsPage() {
                 <section className="mt-16 rounded-[2rem] border border-slate-200 bg-white p-10 md:p-12">
                     <div className="grid lg:grid-cols-3 gap-10 items-start">
                         <div className="lg:col-span-1">
-                            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Customer Reviews & Ratings</h2>
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-accent mb-4">Customer Reviews & Ratings</h2>
                             <p className="text-slate-600 mb-6">
                                 {ratingSummary.highlight}
                             </p>
@@ -165,13 +165,13 @@ export default function ReviewsPage() {
                 </section>
 
                 <section className="mt-16 rounded-[2rem] border border-slate-200 bg-slate-50 p-10 md:p-12 text-center">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3">Want to Be Our Next Success Story?</h2>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-accent mb-3">Want to Be Our Next Success Story?</h2>
                     <p className="text-slate-600 mb-7 max-w-2xl mx-auto">
                         Book a free guidance call and get a realistic plan to pass in your preferred timeline.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3">
-                        <a href="tel:+448001234567" className="rounded-full bg-slate-900 px-7 py-3 font-semibold text-white">Call Our Team</a>
-                        <a href="https://wa.me/447777777777" className="rounded-full bg-green-600 px-7 py-3 font-semibold text-white">WhatsApp Now</a>
+                        <a href="tel:+448001234567" className="rounded-full bg-accent px-7 py-3 font-semibold text-white shadow-sm shadow-accent/20 hover:bg-[#E05D23] transition-colors">Call Our Team</a>
+                        <a href="https://wa.me/447777777777" className="rounded-full bg-emerald-50 border border-emerald-200 px-7 py-3 font-semibold text-emerald-700 hover:bg-emerald-100 transition-colors">WhatsApp Now</a>
                     </div>
                 </section>
             </div>

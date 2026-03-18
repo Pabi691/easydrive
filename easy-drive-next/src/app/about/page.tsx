@@ -8,8 +8,8 @@ import Link from "next/link";
 export default function AboutPage() {
     return (
         <div className="pt-32 pb-24 bg-white relative overflow-hidden">
-            <div className="absolute -top-16 -left-16 h-72 w-72 rounded-full bg-orange-100/70 blur-3xl -z-10" />
-            <div className="absolute top-20 right-0 h-96 w-96 rounded-full bg-blue-100/70 blur-3xl -z-10" />
+            {/* Subtle background glow */}
+            <div className="absolute top-0 right-0 h-[600px] w-[600px] rounded-full bg-orange-50/50 blur-[120px] -z-10" />
             <div className="container mx-auto px-6 md:px-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -17,8 +17,8 @@ export default function AboutPage() {
                     transition={{ duration: 0.6 }}
                     className="text-center max-w-3xl mx-auto mb-20"
                 >
-                    <span className="text-brand-orange font-bold text-sm tracking-wider uppercase mb-4 block">About Us</span>
-                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.05]">
+                    <span className="font-bold text-sm tracking-wider uppercase mb-4 block">About Us</span>
+                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-accent mb-6 leading-[1.05]">
                         Driving Excellence Across the UK
                     </h1>
                     <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
@@ -56,13 +56,14 @@ export default function AboutPage() {
 
                         <ul className="space-y-6">
                             {[
+
                                 "Fully qualified DVSA-approved driving instructors.",
                                 "High-quality modern dual-control tuition vehicles.",
                                 "Fast-track practical test booking service.",
                                 "Tailored courses to suit total beginners to advanced drivers."
                             ].map((text, i) => (
                                 <li key={i} className="flex gap-4 items-start">
-                                    <div className="bg-orange-50 p-2 rounded-full text-brand-orange">
+                                    <div className="bg-orange-50 p-2 rounded-full text-accent">
                                         <CheckCircle size={20} />
                                     </div>
                                     <span className="text-slate-700 font-medium">{text}</span>
@@ -72,7 +73,7 @@ export default function AboutPage() {
                     </motion.div>
                 </div>
 
-                <section className="mb-20 rounded-[2rem] bg-gradient-to-r from-slate-900 to-slate-800 p-10 md:p-14 text-white">
+                <section className="mb-20 rounded-[2rem] bg-orange-50/50 border border-orange-100 p-10 md:p-14 text-slate-900">
                     <div className="grid gap-8 md:grid-cols-4">
                         {[
                             { icon: <Users size={24} />, title: "5000+", subtitle: "Students Passed" },
@@ -80,10 +81,10 @@ export default function AboutPage() {
                             { icon: <ShieldCheck size={24} />, title: "92%", subtitle: "First-Time Pass Rate" },
                             { icon: <CheckCircle size={24} />, title: "7 Days", subtitle: "Support Availability" },
                         ].map((item) => (
-                            <div key={item.subtitle} className="rounded-2xl border border-white/15 bg-white/10 p-6">
-                                <div className="mb-4 text-orange-300">{item.icon}</div>
-                                <p className="text-3xl font-extrabold">{item.title}</p>
-                                <p className="text-sm text-slate-200">{item.subtitle}</p>
+                            <div key={item.subtitle} className="rounded-2xl border border-white bg-white p-6 shadow-sm shadow-orange-100/50">
+                                <div className="mb-4 text-accent">{item.icon}</div>
+                                <p className="text-3xl font-extrabold text-slate-900">{item.title}</p>
+                                <p className="text-sm text-slate-500 font-medium mt-1">{item.subtitle}</p>
                             </div>
                         ))}
                     </div>
@@ -115,13 +116,13 @@ export default function AboutPage() {
                 </section>
 
                 <section className="rounded-[2rem] border border-slate-200 bg-white p-10 md:p-14 text-center shadow-sm">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Ready to Learn with Easy-Drive?</h2>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-accent mb-4">Ready to Learn with Easy-Drive?</h2>
                     <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
                         Speak to our team for a personalized plan based on your goals, location, and test timeline.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3">
-                        <Link href="/contact" className="rounded-full bg-brand-orange px-7 py-3 font-semibold text-white hover:bg-orange-600 transition-colors">Book Your Plan</Link>
-                        <a href="https://wa.me/447777777777" className="rounded-full border border-green-300 bg-green-50 px-7 py-3 font-semibold text-green-700 hover:bg-green-100 transition-colors">WhatsApp Us</a>
+                        <Link href="/contact" className="rounded-full bg-accent px-7 py-3 font-semibold text-white hover:bg-[#E05D23] transition-colors shadow-sm shadow-accent/20">Book Your Plan</Link>
+                        <a href="https://wa.me/447777777777" className="rounded-full border border-emerald-200 bg-emerald-50 px-7 py-3 font-semibold text-emerald-700 hover:bg-emerald-100 transition-colors">WhatsApp Us</a>
                     </div>
                 </section>
             </div>
