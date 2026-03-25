@@ -31,8 +31,8 @@ export default function Header() {
                             <Image
                                 src="/images/easy-drive-logo.png"
                                 alt="Easy-Drive.UK Logo"
-                                width={140}
-                                height={50}
+                                width={200}
+                                height={64}
                                 className="h-11 w-auto object-contain"
                             />
                         </Link>

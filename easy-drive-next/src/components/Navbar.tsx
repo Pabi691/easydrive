@@ -37,11 +37,10 @@ export default function Navbar() {
 
     return (
         <header
-            className={`fixed top-0 w-full z-[999] transition-all duration-500 ${
-                scrolled && !isOpen
-                    ? "py-2 bg-white/85 backdrop-blur-2xl border-b border-slate-100/80 shadow-[0_4px_30px_rgba(15,23,42,0.06)]"
-                    : "py-4 bg-transparent"
-            }`}
+            className={`fixed top-0 w-full z-[999] transition-all duration-500 ${scrolled && !isOpen
+                ? "py-2 bg-white/85 backdrop-blur-2xl border-b border-slate-100/80 shadow-[0_4px_30px_rgba(15,23,42,0.06)]"
+                : "py-4 bg-transparent"
+                }`}
             style={{ isolation: "isolate" }}
         >
             <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -52,7 +51,7 @@ export default function Navbar() {
                         alt="Easy-Drive.UK Logo"
                         width={200}
                         height={64}
-                        className="w-auto h-10 md:h-12 object-contain"
+                        className="w-auto h-20 md:h-[90px] object-contain"
                     />
                 </Link>
 
@@ -62,11 +61,10 @@ export default function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className={`relative rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
-                                isActive(link.href)
-                                    ? "bg-accent/10 text-accent"
-                                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
-                            }`}
+                            className={`relative rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${isActive(link.href)
+                                ? "bg-accent/10 text-accent"
+                                : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                                }`}
                         >
                             {link.name}
                             {isActive(link.href) && (
@@ -150,11 +148,10 @@ export default function Navbar() {
                                     <Link
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
-                                        className={`block text-2xl font-semibold py-3 border-b border-slate-100 transition-colors ${
-                                            isActive(link.href)
-                                                ? "text-accent"
-                                                : "text-slate-600 hover:text-slate-900"
-                                        }`}
+                                        className={`block text-2xl font-semibold py-3 border-b border-slate-100 transition-colors ${isActive(link.href)
+                                            ? "text-accent"
+                                            : "text-slate-600 hover:text-slate-900"
+                                            }`}
                                     >
                                         {link.name}
                                     </Link>

@@ -158,7 +158,7 @@ export default function Hero() {
     const headlineWords = ["Pass", "Your", "Test", "Faster", "&", "Smarter"];
 
     return (
-        <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-16 lg:pt-24 lg:pb-20"
+        <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden pt-30 pb-16 lg:pt-30 lg:pb-20"
             style={{ background: "linear-gradient(180deg, #ffffff 0%, #fef9f5 100%)" }}
         >
 

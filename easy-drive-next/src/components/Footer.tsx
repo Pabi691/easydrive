@@ -21,7 +21,7 @@ export default function Footer() {
                                 alt="Easy-Drive.UK Logo"
                                 width={180}
                                 height={50}
-                                className="w-auto h-10 object-contain"
+                                className="w-auto h-20 md:h-[90px] object-contain"
                             />
                         </Link>
                         <p className="text-slate-600 text-sm leading-relaxed">
@@ -34,7 +34,7 @@ export default function Footer() {
                                 { icon: <Instagram size={15} />, href: "#" },
                             ].map((social, i) => (
                                 <a key={i} href={social.href}
-                                   className="w-9 h-9 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-center text-slate-500 hover:bg-accent/10 hover:text-accent hover:border-accent/30 transition-all">
+                                    className="w-9 h-9 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-center text-slate-500 hover:bg-accent/10 hover:text-accent hover:border-accent/30 transition-all">
                                     {social.icon}
                                 </a>
                             ))}
@@ -48,7 +48,7 @@ export default function Footer() {
                             {courses.map((course) => (
                                 <li key={course.slug}>
                                     <Link href={`/services/${course.slug}`}
-                                          className="text-sm text-slate-600 hover:text-accent transition-colors flex items-center gap-1.5 group">
+                                        className="text-sm text-slate-600 hover:text-accent transition-colors flex items-center gap-1.5 group">
                                         <ArrowRight size={12} className="text-slate-400 group-hover:text-accent group-hover:translate-x-0.5 transition-all" />
                                         {course.title}
                                     </Link>
@@ -101,7 +101,7 @@ export default function Footer() {
                                 <MapPin size={15} className="text-slate-500 mt-0.5 shrink-0" />
                                 <div>
                                     <span className="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Office</span>
-                                    <span className="block text-sm font-medium text-slate-700">123 Driving School Lane<br/>London, W1A 1AA</span>
+                                    <span className="block text-sm font-medium text-slate-700">123 Driving School Lane<br />London, W1A 1AA</span>
                                 </div>
                             </li>
                         </ul>
