@@ -2,7 +2,7 @@
 
 import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
-import { MousePointerClick, CalendarCheck, Flag, ArrowRight } from "lucide-react";
+import { MousePointerClick, CalendarCheck, Flag, ArrowRight, BookOpen } from "lucide-react";
 
 const steps = [
     {
@@ -14,18 +14,18 @@ const steps = [
     },
     {
         num: "02",
-        title: "Book Fast-Track Test",
-        description: "We handle the DVSA booking, finding cancellations and fast-tracking your practical test dates to save months.",
-        icon: <CalendarCheck size={24} className="text-blue-500" />,
+        title: "Start Learning",
+        description: "Begin your lessons with expert instructors, building confidence step-by-step through structured, easy-to-follow training tailored to your pace.",
+        icon: <BookOpen size={24} className="text-blue-500" />,
         color: "bg-blue-50 border-blue-100",
     },
     {
         num: "03",
-        title: "Learn & Pass",
-        description: "Learn with highly rated, DVSA-approved instructors in premium modern cars until you pass with confidence.",
+        title: "Pass with Confidence",
+        description: "Master real test routes, sharpen your skills, and approach your driving test fully prepared — ready to pass on your first attempt.",
         icon: <Flag size={24} className="text-emerald-500" />,
         color: "bg-emerald-50 border-emerald-100",
-    },
+    }
 ];
 
 export default function HowItWorks() {

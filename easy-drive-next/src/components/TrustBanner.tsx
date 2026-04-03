@@ -10,7 +10,7 @@ const badges = [
     { text: "Fast-Track Tests", emoji: "⚡" },
     { text: "4.9★ Google Rating", emoji: "⭐" },
     { text: "Flexible Scheduling", emoji: "📅" },
-    { text: "Female Instructors", emoji: "👩‍🏫" },
+    { text: "Experienced Instructors", emoji: "🎯" }
 ];
 
 export default function TrustBanner() {

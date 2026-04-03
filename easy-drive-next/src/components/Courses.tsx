@@ -196,7 +196,7 @@ export default function Courses() {
                 </div>
 
                 {/* Course Cards */}
-                <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
+                <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-5 gap-5 relative z-10">
                     {courses.map((course, idx) => {
                         const badgeClass = badgeMap[course.slug] ?? "bg-slate-500/10 text-slate-400 border-slate-500/20";
                         const accentClass = accentMap[course.slug] ?? "from-slate-600 to-slate-400";

@@ -21,7 +21,7 @@ export default function Footer() {
                                 alt="Easy-Drive.UK Logo"
                                 width={180}
                                 height={50}
-                                className="w-auto h-20 md:h-[90px] object-contain"
+                                className="w-auto h-20 md:h-[100px] object-contain"
                             />
                         </Link>
                         <p className="text-slate-600 text-sm leading-relaxed">

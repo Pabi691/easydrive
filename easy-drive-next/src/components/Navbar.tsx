@@ -51,7 +51,7 @@ export default function Navbar() {
                         alt="Easy-Drive.UK Logo"
                         width={200}
                         height={64}
-                        className="w-auto h-20 md:h-[90px] object-contain"
+                        className="w-auto h-20 md:h-[100px] object-contain"
                     />
                 </Link>
 

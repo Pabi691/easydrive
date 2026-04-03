@@ -76,7 +76,7 @@ export default function ContactPage() {
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="lg:col-span-2 glass-card bg-white p-8 rounded-[2rem]"
+                        className="lg:col-span-2 glass-card bg-white p-8 rounded-[2rem] order-first lg:order-last"
                     >
                         <h2 className="text-2xl font-bold text-slate-900 mb-6">Send us a message</h2>
                         <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>

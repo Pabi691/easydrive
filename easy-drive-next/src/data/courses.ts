@@ -135,6 +135,37 @@ export const courses: Course[] = [
         metaTitle: "Pass Plus Course | Easy-Drive.UK",
         metaDescription: "Boost confidence after your test with Pass Plus motorway and night driving modules.",
     },
+    {
+        slug: "lorem-ipsum",
+        title: "Lorem Ipsum",
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        badges: ["Lorem", "Ipsum", "Dolor"],
+        highlights: [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit",
+            "Sed do eiusmod tempor incididunt",
+            "Ut labore et dolore magna aliqua",
+        ],
+        includes: [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit",
+            "Sed do eiusmod tempor",
+            "Incididunt ut labore et dolore",
+        ],
+        idealFor: [
+            "Lorem ipsum users",
+            "Dolor sit amet clients",
+            "Consectetur adipiscing group",
+        ],
+        duration: "Lorem ipsum dolor sit amet",
+        image: "/images/isometric_3d.png",
+        gradient: "from-purple-500 to-pink-500",
+        metaTitle: "Lorem Ipsum Title",
+        metaDescription:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    }
 ];
 
 export const normalizeSlug = (slug?: string | string[]) => {
