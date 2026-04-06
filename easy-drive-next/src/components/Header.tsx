@@ -60,11 +60,11 @@ export default function Header() {
                             </div>
                             <div className="w-px h-5 bg-gray-200" />
                             <a
-                                href="https://wa.me/447777777777"
+                                href="https://wa.me/447836409023"
                                 className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-green-600 transition-colors"
                             >
                                 <FaWhatsapp className="text-green-500" />
-                                <span className="text-xs font-medium">07777777777</span>
+                                <span className="text-xs font-medium">07836 409023</span>
                             </a>
                             <Link
                                 href="/contact"
@@ -100,8 +100,8 @@ export default function Header() {
                             </Link>
                         ))}
                         <div className="mt-3 pt-3 border-t border-gray-100 flex flex-col gap-2">
-                            <a href="tel:07777777777" className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600">
-                                <FaPhone className="text-[#f37021]" /> 07777777777
+                            <a href="tel:+447836409023" className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600">
+                                <FaPhone className="text-[#f37021]" /> 07836 409023
                             </a>
                             <Link
                                 href="/contact"

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { FaCar, FaGears, FaGaugeHigh, FaAward, FaCircleCheck, FaArrowRight, FaPhone, FaWhatsapp } from "react-icons/fa6";
+import { FaCar, FaGears, FaGaugeHigh, FaAward, FaClipboardCheck, FaCircleCheck, FaArrowRight, FaPhone, FaWhatsapp } from "react-icons/fa6";
 import { courses } from "@/data/courses";
 
 export const metadata: Metadata = {
@@ -14,6 +14,7 @@ const iconMap: Record<string, ReactNode> = {
     manual: <FaGears className="text-3xl" />,
     intensive: <FaGaugeHigh className="text-3xl" />,
     "pass-plus": <FaAward className="text-3xl" />,
+    "test-ready": <FaClipboardCheck className="text-3xl" />,
 };
 
 export default function ServicesPage() {
@@ -119,10 +120,10 @@ export default function ServicesPage() {
                             <Link href="/contact" className="bg-accent text-white px-8 py-3.5 rounded-full font-bold hover:shadow-xl transition-all">
                                 Contact Us
                             </Link>
-                            <a href="tel:07777777777" className="bg-white text-slate-800 border border-slate-200 px-8 py-3.5 rounded-full font-bold hover:bg-slate-50 transition-all flex items-center gap-2 shadow-sm">
-                                <FaPhone className="text-accent" /> 07777777777
+                            <a href="tel:+447836409023" className="bg-white text-slate-800 border border-slate-200 px-8 py-3.5 rounded-full font-bold hover:bg-slate-50 transition-all flex items-center gap-2 shadow-sm">
+                                <FaPhone className="text-accent" /> 07836 409023
                             </a>
-                            <a href="https://wa.me/447777777777" className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-8 py-3.5 rounded-full font-bold hover:bg-emerald-100 transition-all flex items-center gap-2">
+                            <a href="https://wa.me/447836409023" className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-8 py-3.5 rounded-full font-bold hover:bg-emerald-100 transition-all flex items-center gap-2">
                                 <FaWhatsapp size={18} /> WhatsApp
                             </a>
                         </div>

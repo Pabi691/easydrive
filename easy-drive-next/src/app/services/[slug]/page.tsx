@@ -148,10 +148,10 @@ export default async function CourseDetailsPage({ params }: PageProps) {
                             Speak with our team to build a plan around your schedule and target test date.
                         </p>
                         <div className="flex flex-wrap justify-center gap-3">
-                            <a href="tel:+448001234567" className="rounded-full bg-white px-7 py-3 font-semibold text-slate-900 flex items-center gap-2">
-                                <FaPhone /> Call 0800 123 4567
+                            <a href="tel:+447836409023" className="rounded-full bg-white px-7 py-3 font-semibold text-slate-900 flex items-center gap-2">
+                                <FaPhone /> Call 07836 409023
                             </a>
-                            <a href="https://wa.me/447777777777" className="rounded-full bg-green-600 px-7 py-3 font-semibold text-white flex items-center gap-2">
+                            <a href="https://wa.me/447836409023" className="rounded-full bg-green-600 px-7 py-3 font-semibold text-white flex items-center gap-2">
                                 <FaWhatsapp /> WhatsApp Chat
                             </a>
                         </div>

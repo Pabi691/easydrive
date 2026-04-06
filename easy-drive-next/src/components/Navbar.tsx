@@ -51,7 +51,7 @@ export default function Navbar() {
                         alt="Easy-Drive.UK Logo"
                         width={200}
                         height={64}
-                        className="w-auto h-20 md:h-[100px] object-contain"
+                        className="w-auto h-20 md:h-[150px] object-contain"
                     />
                 </Link>
 
@@ -81,14 +81,14 @@ export default function Navbar() {
                 {/* CTA Buttons */}
                 <div className="hidden lg:flex items-center gap-2">
                     <a
-                        href="tel:+448001234567"
+                        href="tel:+447836409023"
                         className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all"
                     >
                         <PhoneCall size={14} className="text-accent" />
                         Call
                     </a>
                     <a
-                        href="https://wa.me/447777777777"
+                        href="https://wa.me/447836409023"
                         className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700 hover:bg-emerald-100 transition-all"
                     >
                         <MessageCircle size={14} />
@@ -161,11 +161,11 @@ export default function Navbar() {
 
                         <div className="px-8 pb-10 space-y-3">
                             <div className="grid grid-cols-2 gap-3">
-                                <a href="tel:+448001234567" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-sm font-medium text-slate-700">
+                                <a href="tel:+447836409023" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-sm font-medium text-slate-700">
                                     <PhoneCall size={16} className="text-accent" />
                                     Call
                                 </a>
-                                <a href="https://wa.me/447777777777" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3.5 text-sm font-medium text-emerald-700">
+                                <a href="https://wa.me/447836409023" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3.5 text-sm font-medium text-emerald-700">
                                     <MessageCircle size={16} />
                                     WhatsApp
                                 </a>

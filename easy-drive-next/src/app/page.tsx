@@ -6,6 +6,7 @@ import Stats from "@/components/Stats";
 import HowItWorks from "@/components/HowItWorks";
 import Locations from "@/components/Locations";
 import Reviews from "@/components/Reviews";
+import ReferAFriend from "@/components/ReferAFriend";
 import Gallery from "@/components/Gallery";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -31,6 +32,7 @@ export default function Home() {
       <Locations />
       {/* <RoadDivider /> */}
       <Reviews />
+      <ReferAFriend />
       <Gallery />
       <FAQ />
       <CTA />

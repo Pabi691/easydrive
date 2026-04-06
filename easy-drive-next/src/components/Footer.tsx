@@ -80,28 +80,28 @@ export default function Footer() {
                                 <Phone size={15} className="text-slate-500 mt-0.5 shrink-0" />
                                 <div>
                                     <span className="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Call</span>
-                                    <a href="tel:+448001234567" className="block text-sm font-medium text-slate-700 hover:text-accent transition-colors">0800 123 4567</a>
+                                    <a href="tel:+447836409023" className="block text-sm font-medium text-slate-700 hover:text-accent transition-colors">07836 409023</a>
                                 </div>
                             </li>
                             <li className="flex items-start gap-3">
                                 <MessageCircle size={15} className="text-emerald-500 mt-0.5 shrink-0" />
                                 <div>
                                     <span className="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">WhatsApp</span>
-                                    <a href="https://wa.me/447777777777" className="block text-sm font-medium text-slate-700 hover:text-emerald-600 transition-colors">Chat with us</a>
+                                    <a href="https://wa.me/447836409023" className="block text-sm font-medium text-slate-700 hover:text-emerald-600 transition-colors">Chat with us</a>
                                 </div>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Mail size={15} className="text-slate-500 mt-0.5 shrink-0" />
                                 <div>
                                     <span className="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Email</span>
-                                    <a href="mailto:hello@easy-drive.uk" className="block text-sm font-medium text-slate-700 hover:text-accent transition-colors">hello@easy-drive.uk</a>
+                                    <a href="mailto:suneilios@gmail.com" className="block text-sm font-medium text-slate-700 hover:text-accent transition-colors">suneilios@gmail.com</a>
                                 </div>
                             </li>
                             <li className="flex items-start gap-3">
                                 <MapPin size={15} className="text-slate-500 mt-0.5 shrink-0" />
                                 <div>
                                     <span className="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Office</span>
-                                    <span className="block text-sm font-medium text-slate-700">123 Driving School Lane<br />London, W1A 1AA</span>
+                                    <a href="https://share.google/UvnzDKmoOL8s6btWg" target="_blank" rel="noopener" className="block text-sm font-medium text-slate-700 hover:text-accent transition-colors">44 Dawley Ride, Slough SL3 0QH<br />United Kingdom</a>
                                 </div>
                             </li>
                         </ul>

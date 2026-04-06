@@ -77,10 +77,10 @@ export default function ShowMeTellMePage() {
                             <Link href="/services" className="bg-emerald-600 text-white border border-emerald-700 px-8 py-3 rounded-full font-bold hover:bg-emerald-700 hover:shadow-xl transition-all">
                                 View Our Courses
                             </Link>
-                            <a href="tel:+448001234567" className="bg-accent text-white px-8 py-3 rounded-full font-bold hover:shadow-xl shadow-accent/20 hover:bg-[#E05D23] transition-all inline-flex items-center gap-2">
+                            <a href="tel:+447836409023" className="bg-accent text-white px-8 py-3 rounded-full font-bold hover:shadow-xl shadow-accent/20 hover:bg-[#E05D23] transition-all inline-flex items-center gap-2">
                                 <FaPhone /> Call
                             </a>
-                            <a href="https://wa.me/447777777777" className="bg-white text-emerald-700 border border-emerald-200 px-8 py-3 rounded-full font-bold hover:bg-emerald-50 hover:shadow-sm transition-all inline-flex items-center gap-2">
+                            <a href="https://wa.me/447836409023" className="bg-white text-emerald-700 border border-emerald-200 px-8 py-3 rounded-full font-bold hover:bg-emerald-50 hover:shadow-sm transition-all inline-flex items-center gap-2">
                                 <FaWhatsapp size={18} /> WhatsApp
                             </a>
                         </div>

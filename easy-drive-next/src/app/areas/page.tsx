@@ -46,8 +46,8 @@ export default function AreasPage() {
                             We frequently add instructors in new locations. Message us and we&apos;ll confirm availability or waitlist your area.
                         </p>
                         <div className="flex flex-wrap justify-center gap-3">
-                            <a href="https://wa.me/447777777777" className="rounded-full bg-emerald-50 border border-emerald-200 px-7 py-3 font-semibold text-emerald-700 hover:bg-emerald-100 transition-colors">WhatsApp Availability</a>
-                            <a href="tel:+448001234567" className="rounded-full bg-accent px-7 py-3 font-semibold text-white shadow-sm shadow-accent/20 hover:bg-[#E05D23] transition-colors">Call Support</a>
+                            <a href="https://wa.me/447836409023" className="rounded-full bg-emerald-50 border border-emerald-200 px-7 py-3 font-semibold text-emerald-700 hover:bg-emerald-100 transition-colors">WhatsApp Availability</a>
+                            <a href="tel:+447836409023" className="rounded-full bg-accent px-7 py-3 font-semibold text-white shadow-sm shadow-accent/20 hover:bg-[#E05D23] transition-colors">Call Support</a>
                         </div>
                     </div>
                 </section>

@@ -78,7 +78,7 @@ export default function CTA() {
                                     <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
                                 </Link>
                                 <a
-                                    href="tel:+448001234567"
+                                    href="tel:+447836409023"
                                     className="inline-flex items-center justify-center gap-2 text-base font-bold text-slate-800 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm rounded-[14px] px-8 py-3.5 transition-all hover:-translate-y-0.5 active:scale-[0.97]"
                                 >
                                     <PhoneCall size={16} className="text-accent" />
@@ -93,7 +93,7 @@ export default function CTA() {
                                 transition={{ delay: 0.55, duration: 0.5 }}
                                 className="flex justify-center"
                             >
-                                <a href="https://wa.me/447777777777" className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/20 bg-emerald-50 px-5 py-2.5 text-sm font-bold text-emerald-700 hover:bg-emerald-100 transition-all">
+                                <a href="https://wa.me/447836409023" className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/20 bg-emerald-50 px-5 py-2.5 text-sm font-bold text-emerald-700 hover:bg-emerald-100 transition-all">
                                     <MessageCircle size={14} />
                                     Chat on WhatsApp
                                 </a>

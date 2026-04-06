@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Settings, Gamepad2, Zap, ShieldCheck, ArrowRight } from "lucide-react";
+import { Settings, Gamepad2, Zap, ShieldCheck, ClipboardCheck, ArrowRight } from "lucide-react";
 import { courses } from "@/data/courses";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,6 +22,7 @@ export default function Courses() {
         manual: <Settings size={20} className="text-slate-400" />,
         intensive: <Zap size={20} className="text-purple-400" />,
         "pass-plus": <ShieldCheck size={20} className="text-emerald-400" />,
+        "test-ready": <ClipboardCheck size={20} className="text-teal-400" />,
     };
 
     const accentMap: Record<string, string> = {
@@ -29,6 +30,7 @@ export default function Courses() {
         manual: "from-slate-600 to-slate-400",
         intensive: "from-purple-500 to-pink-400",
         "pass-plus": "from-emerald-500 to-teal-400",
+        "test-ready": "from-teal-500 to-cyan-600",
     };
 
     const badgeMap: Record<string, string> = {
@@ -36,6 +38,7 @@ export default function Courses() {
         manual: "bg-slate-500/10 text-slate-400 border-slate-500/20",
         intensive: "bg-purple-500/10 text-purple-400 border-purple-500/20",
         "pass-plus": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+        "test-ready": "bg-teal-500/10 text-teal-400 border-teal-500/20",
     };
 
     const glowMap: Record<string, string> = {
@@ -43,6 +46,7 @@ export default function Courses() {
         manual: "rgba(100,116,139,0.12)",
         intensive: "rgba(168,85,247,0.15)",
         "pass-plus": "rgba(16,185,129,0.15)",
+        "test-ready": "rgba(20,184,166,0.15)",
     };
 
     useEffect(() => {

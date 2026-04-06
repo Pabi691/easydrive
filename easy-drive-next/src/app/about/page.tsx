@@ -122,7 +122,7 @@ export default function AboutPage() {
                     </p>
                     <div className="flex flex-wrap justify-center gap-3">
                         <Link href="/contact" className="rounded-full bg-accent px-7 py-3 font-semibold text-white hover:bg-[#E05D23] transition-colors shadow-sm shadow-accent/20">Book Your Plan</Link>
-                        <a href="https://wa.me/447777777777" className="rounded-full border border-emerald-200 bg-emerald-50 px-7 py-3 font-semibold text-emerald-700 hover:bg-emerald-100 transition-colors">WhatsApp Us</a>
+                        <a href="https://wa.me/447836409023" className="rounded-full border border-emerald-200 bg-emerald-50 px-7 py-3 font-semibold text-emerald-700 hover:bg-emerald-100 transition-colors">WhatsApp Us</a>
                     </div>
                 </section>
             </div>

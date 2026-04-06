@@ -158,7 +158,7 @@ export default function Hero() {
     const headlineWords = ["Pass", "Your", "Test", "Faster", "&", "Smarter"];
 
     return (
-        <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden pt-30 pb-16 lg:pt-30 lg:pb-20"
+        <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden pt-30 pb-16 lg:pt-[200px] lg:pb-20"
             style={{ background: "linear-gradient(180deg, #ffffff 0%, #fef9f5 100%)" }}
         >
 
@@ -212,7 +212,7 @@ export default function Hero() {
                                 {/* Phone Number — #1 Priority */}
                                 <a
                                     ref={phoneRef}
-                                    href="tel:+448001234567"
+                                    href="tel:+447836409023"
                                     className="relative group inline-flex items-center gap-3 rounded-full px-7 py-3.5 text-base font-bold text-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl active:scale-[0.97] opacity-0"
                                     style={{
                                         background: "rgba(255,107,44,0.06)",
@@ -232,13 +232,13 @@ export default function Hero() {
                                     <div className="relative z-10 w-9 h-9 rounded-full bg-[#FF6B2C] flex items-center justify-center shadow-lg">
                                         <PhoneCall size={16} className="text-white" />
                                     </div>
-                                    <span className="relative z-10 font-[family-name:var(--font-jetbrains)] text-gray-800 tracking-wide">0800 123 4567</span>
+                                    <span className="relative z-10 font-[family-name:var(--font-jetbrains)] text-gray-800 tracking-wide">07836 409023</span>
                                 </a>
 
                                 {/* WhatsApp — Icon Only Circle */}
                                 <a
                                     ref={whatsappRef}
-                                    href="https://wa.me/447777777777"
+                                    href="https://wa.me/447836409023"
                                     aria-label="WhatsApp"
                                     className="relative w-[52px] h-[52px] rounded-full flex items-center justify-center group transition-all duration-300 hover:-translate-y-1 hover:scale-110 active:scale-95 opacity-0"
                                     style={{

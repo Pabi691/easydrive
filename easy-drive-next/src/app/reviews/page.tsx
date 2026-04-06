@@ -170,8 +170,8 @@ export default function ReviewsPage() {
                         Book a free guidance call and get a realistic plan to pass in your preferred timeline.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3">
-                        <a href="tel:+448001234567" className="rounded-full bg-accent px-7 py-3 font-semibold text-white shadow-sm shadow-accent/20 hover:bg-[#E05D23] transition-colors">Call Our Team</a>
-                        <a href="https://wa.me/447777777777" className="rounded-full bg-emerald-50 border border-emerald-200 px-7 py-3 font-semibold text-emerald-700 hover:bg-emerald-100 transition-colors">WhatsApp Now</a>
+                        <a href="tel:+447836409023" className="rounded-full bg-accent px-7 py-3 font-semibold text-white shadow-sm shadow-accent/20 hover:bg-[#E05D23] transition-colors">Call Our Team</a>
+                        <a href="https://wa.me/447836409023" className="rounded-full bg-emerald-50 border border-emerald-200 px-7 py-3 font-semibold text-emerald-700 hover:bg-emerald-100 transition-colors">WhatsApp Now</a>
                     </div>
                 </section>
             </div>

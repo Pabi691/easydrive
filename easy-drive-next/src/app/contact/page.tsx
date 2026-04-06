@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
+import { courses } from "@/data/courses";
 
 export default function ContactPage() {
     return (
@@ -37,7 +38,7 @@ export default function ContactPage() {
                             </div>
                             <h3 className="text-xl font-bold text-slate-900 mb-2">Call Us</h3>
                             <p className="text-slate-500 mb-4 text-sm">Mon-Fri from 8am to 8pm.</p>
-                            <a href="tel:+448001234567" className="text-lg font-bold text-accent hover:underline">0800 123 4567</a>
+                            <a href="tel:+447836409023" className="text-lg font-bold text-accent hover:underline">07836 409023</a>
                         </div>
 
                         <div className="glass-card bg-white p-8 group hover:border-brand-blue transition-colors duration-300">
@@ -46,7 +47,7 @@ export default function ContactPage() {
                             </div>
                             <h3 className="text-xl font-bold text-slate-900 mb-2">Email Us</h3>
                             <p className="text-slate-500 mb-4 text-sm">We&apos;ll respond within 24 hours.</p>
-                            <a href="mailto:hello@easy-drive.uk" className="text-lg font-bold text-brand-blue hover:underline">hello@easy-drive.uk</a>
+                            <a href="mailto:suneilios@gmail.com" className="text-lg font-bold text-brand-blue hover:underline">suneilios@gmail.com</a>
                         </div>
 
                         <div className="glass-card bg-white p-8 group hover:border-green-500 transition-colors duration-300">
@@ -55,7 +56,7 @@ export default function ContactPage() {
                             </div>
                             <h3 className="text-xl font-bold text-slate-900 mb-2">WhatsApp</h3>
                             <p className="text-slate-500 mb-4 text-sm">Quick replies for bookings and course advice.</p>
-                            <a href="https://wa.me/447777777777" className="text-lg font-bold text-green-600 hover:underline">Chat on WhatsApp</a>
+                            <a href="https://wa.me/447836409023" className="text-lg font-bold text-green-600 hover:underline">Chat on WhatsApp</a>
                         </div>
 
                         <div className="glass-card bg-white p-8 group hover:border-accent transition-colors duration-300">
@@ -64,9 +65,10 @@ export default function ContactPage() {
                             </div>
                             <h3 className="text-xl font-bold text-slate-900 mb-2">Head Office</h3>
                             <p className="text-slate-500 text-sm">
-                                123 Driving School Lane<br />
-                                London, W1A 1AA<br />
-                                United Kingdom
+                                <a href="https://share.google/UvnzDKmoOL8s6btWg" target="_blank" rel="noopener" className="hover:text-accent transition-colors">
+                                    44 Dawley Ride, Slough SL3 0QH<br />
+                                    United Kingdom
+                                </a>
                             </p>
                         </div>
                     </motion.div>
@@ -105,10 +107,12 @@ export default function ContactPage() {
                             <div>
                                 <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">Enquiry Type</label>
                                 <select id="subject" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all bg-slate-50 text-slate-700">
-                                    <option>Booking an intensive course</option>
-                                    <option>Weekly driving lessons</option>
-                                    <option>Instructor enquiry</option>
-                                    <option>Other</option>
+                                    <option value="">Select a course...</option>
+                                    {courses.map((course) => (
+                                        <option key={course.slug} value={course.slug}>{course.title}</option>
+                                    ))}
+                                    <option value="instructor">Instructor enquiry</option>
+                                    <option value="other">Other</option>
                                 </select>
                             </div>
 
@@ -122,6 +126,34 @@ export default function ContactPage() {
                                 <Send size={18} />
                             </button>
                         </form>
+
+                        {/* Location Map */}
+                        <div className="mt-8">
+                            <div className="flex items-center gap-2 mb-3">
+                                <MapPin size={16} className="text-accent" />
+                                <span className="text-sm font-semibold text-slate-700">44 Dawley Ride, Slough SL3 0QH, United Kingdom</span>
+                            </div>
+                            <div className="rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+                                <iframe
+                                    src="https://maps.google.com/maps?q=44+Dawley+Ride,+Slough+SL3+0QH,+United+Kingdom&output=embed"
+                                    width="100%"
+                                    height="280"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Easy-Drive.UK Office Location"
+                                />
+                            </div>
+                            <a
+                                href="https://share.google/UvnzDKmoOL8s6btWg"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mt-2.5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
+                            >
+                                <MapPin size={13} /> Open in Google Maps
+                            </a>
+                        </div>
                     </motion.div>
                 </div>
 
