@@ -180,6 +180,29 @@ export default function WhyChooseUs() {
         <section ref={sectionRef} className="relative py-28 overflow-hidden"
             style={{ background: "#ffffff" }}
         >
+            <style>{`
+                @media (max-width: 1023px) {
+                    @keyframes neonPulse {
+                        0%, 100% {
+                            box-shadow:
+                                0 0 4px var(--neon),
+                                0 0 12px var(--neon-soft),
+                                0 0 1px var(--neon) inset;
+                        }
+                        50% {
+                            box-shadow:
+                                0 0 10px var(--neon),
+                                0 0 28px var(--neon-soft),
+                                0 0 50px var(--neon-softer),
+                                0 0 2px var(--neon) inset;
+                        }
+                    }
+                    .neon-card {
+                        border-color: var(--neon) !important;
+                        animation: neonPulse 2.4s ease-in-out infinite;
+                    }
+                }
+            `}</style>
 
             {/* ═══ BACKGROUND — Light ═══ */}
             <div className="absolute inset-0 -z-10 bg-[url('/images/hero_night_city.png')] bg-cover bg-center opacity-15" />
@@ -220,13 +243,16 @@ export default function WhyChooseUs() {
                         className="lg:col-span-4 relative group cursor-pointer flex"
                         style={{ transformStyle: "preserve-3d" }}
                     >
-                        <div className="relative w-full h-full rounded-3xl p-8 lg:p-10 overflow-hidden border border-slate-100 transition-shadow duration-500 group-hover:shadow-2xl flex flex-col"
+                        <div className="neon-card relative w-full h-full rounded-3xl p-8 lg:p-10 overflow-hidden border border-slate-100 transition-shadow duration-500 group-hover:shadow-2xl flex flex-col"
                             style={{
                                 background: "rgba(255,255,255,0.9)",
                                 backdropFilter: "blur(20px)",
                                 WebkitBackdropFilter: "blur(20px)",
                                 boxShadow: "0 4px 24px -6px rgba(15,23,42,0.08)",
-                            }}
+                                "--neon": featured.accent,
+                                "--neon-soft": featured.glowColor,
+                                "--neon-softer": featured.accentLight,
+                            } as React.CSSProperties}
                         >
                             {/* Pointer-following glow */}
                             <div className="card-glow absolute w-56 h-56 rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 opacity-0"
@@ -294,13 +320,16 @@ export default function WhyChooseUs() {
                                         className="relative group cursor-pointer flex"
                                         style={{ transformStyle: "preserve-3d" }}
                                     >
-                                        <div className="relative w-full h-full rounded-2xl p-6 overflow-hidden border border-slate-100 transition-all duration-500 group-hover:shadow-xl group-hover:border-slate-200 flex flex-col"
+                                        <div className="neon-card relative w-full h-full rounded-2xl p-6 overflow-hidden border border-slate-100 transition-all duration-500 group-hover:shadow-xl group-hover:border-slate-200 flex flex-col"
                                             style={{
                                                 background: "rgba(255,255,255,0.9)",
                                                 backdropFilter: "blur(16px)",
                                                 WebkitBackdropFilter: "blur(16px)",
                                                 boxShadow: "0 2px 16px -4px rgba(15,23,42,0.06)",
-                                            }}
+                                                "--neon": feature.accent,
+                                                "--neon-soft": feature.glowColor,
+                                                "--neon-softer": feature.accentLight,
+                                            } as React.CSSProperties}
                                         >
                                             {/* Pointer-following glow */}
                                             <div className="card-glow absolute w-40 h-40 rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 opacity-0"
@@ -358,13 +387,16 @@ export default function WhyChooseUs() {
                                         className="relative group cursor-pointer flex"
                                         style={{ transformStyle: "preserve-3d" }}
                                     >
-                                        <div className="relative w-full h-full rounded-2xl p-6 overflow-hidden border border-slate-100 transition-all duration-500 group-hover:shadow-xl group-hover:border-slate-200 flex flex-col"
+                                        <div className="neon-card relative w-full h-full rounded-2xl p-6 overflow-hidden border border-slate-100 transition-all duration-500 group-hover:shadow-xl group-hover:border-slate-200 flex flex-col"
                                             style={{
                                                 background: "rgba(255,255,255,0.9)",
                                                 backdropFilter: "blur(16px)",
                                                 WebkitBackdropFilter: "blur(16px)",
                                                 boxShadow: "0 2px 16px -4px rgba(15,23,42,0.06)",
-                                            }}
+                                                "--neon": feature.accent,
+                                                "--neon-soft": feature.glowColor,
+                                                "--neon-softer": feature.accentLight,
+                                            } as React.CSSProperties}
                                         >
                                             {/* Pointer-following glow */}
                                             <div className="card-glow absolute w-40 h-40 rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 opacity-0"
