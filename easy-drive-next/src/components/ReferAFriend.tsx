@@ -52,12 +52,16 @@ export default function ReferAFriend() {
                                 Referral Reward
                             </div>
                             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-5">
-                                Recommend a Friend,<br />
-                                <span className="text-emerald-600">Get £20</span> Gift Voucher
+                                Refer a friend and <br />
+                                <span className="text-emerald-600">get rewarded!</span>
                             </h2>
-                            <p className="text-slate-500 text-lg leading-relaxed mb-6">
-                                Know someone who needs driving lessons? Refer between <strong className="text-slate-700">3 and 5 friends</strong> and we&apos;ll send you a <strong className="text-slate-700">£20 gift voucher</strong> as a thank you.
+                            <p className="text-slate-500 text-lg leading-relaxed mb-4">
+                                For every person you recommend who starts driving with us, you’ll receive a £20 gift voucher as a thank you.
+Simple, easy, and a great way to share the journey 🚗
                             </p>
+                            {/* <p className="text-slate-500 text-lg leading-relaxed mb-6">
+                                Know someone who needs driving lessons? Refer between <strong className="text-slate-700">3 and 5 friends</strong> and we&apos;ll send you a <strong className="text-slate-700">£20 gift voucher</strong> as a thank you.
+                            </p> */}
 
                             {/* Note about adding friends */}
                             <div className="flex items-start gap-3 bg-emerald-50 border border-emerald-100 rounded-2xl px-4 py-3 mb-8">
